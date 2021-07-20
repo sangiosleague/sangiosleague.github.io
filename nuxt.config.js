@@ -52,6 +52,10 @@ export default {
   pwa: {
     manifest: {
       lang: 'en'
+    },
+    meta: {
+      /* meta options */
+      theme_color: '#000080'
     }
   },
 
