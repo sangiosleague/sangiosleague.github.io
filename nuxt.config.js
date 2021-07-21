@@ -4,11 +4,11 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sangiosleague.github.io',
+    title: 'SangioS League',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
