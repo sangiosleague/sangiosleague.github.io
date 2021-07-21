@@ -61,7 +61,12 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      lang: 'en'
+      name: 'SangioS League',
+      description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+      lang: 'it'
+    },
+    icon: {
+      source: '~/static/icon.png'
     },
     meta: {
       /* meta options */
