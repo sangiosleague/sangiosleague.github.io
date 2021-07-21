@@ -62,6 +62,7 @@ export default {
   pwa: {
     manifest: {
       name: 'SangioS League',
+      short_name: 'SangioS League',
       description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
       lang: 'it'
     },
