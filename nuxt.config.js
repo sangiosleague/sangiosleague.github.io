@@ -10,10 +10,10 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto' },
       { name: 'format-detection', content: 'telephone=no' }
-    ],
+    ] /*,
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ] */
   },
 
   loading: {
@@ -72,7 +72,7 @@ export default {
       lang: 'it'
     },
     icon: {
-      fileName: 'qwe-icon.png'
+      fileName: 'maskable_icon_x512.png'
     },
     meta: {
       /* meta options */
