@@ -1,9 +1,15 @@
 <template>
-  <div />
+  <div :data-git="gitUrl" />
 </template>
 
 <script>
-export default {}
+export default {
+  data () {
+    return {
+      gitUrl: `https://github.com/sangiosleague/sangiosleague.github.io/commit/${process.env.NUXT_ENV_CURRENT_GIT_SHA}`
+    }
+  }
+}
 </script>
 
 <style lang="scss">
