@@ -72,11 +72,16 @@ export default {
       lang: 'it'
     },
     icon: {
-      source: '~/static/icon.png'
+      fileName: 'qwe-icon.png'
     },
     meta: {
       /* meta options */
-      theme_color: '#000080'
+      name: 'SangioS League',
+      description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+      author: 'Christophe Thiebaud',
+      theme_color: '#000080',
+      lang: 'it'
+
     }
   },
 
