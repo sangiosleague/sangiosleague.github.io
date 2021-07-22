@@ -2,6 +2,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  server: {
+    port: 3001 // default: 3000
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'SangioS League',
@@ -28,6 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    { src: "./plugins/vue-awesome-swiper.client.js", mode: "client" }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
