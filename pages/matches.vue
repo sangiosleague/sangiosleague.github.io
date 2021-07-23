@@ -73,6 +73,9 @@ main[role="main"]>div:first-child {
     align-items: center !important;
     flex-direction: column;
     flex-wrap: nowrap;
+    overflow: scroll;
+    max-height: calc(100vh - 101px); /* fallback */
+    max-height: calc((var(--vh, 1vh) * 100) - 101px);
 
     div:first-child > .card {
       margin: 1rem;
