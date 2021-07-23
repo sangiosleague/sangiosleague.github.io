@@ -27,8 +27,6 @@
             </b-card>
           </div>
         </swiper-slide>
-        <div slot="button-prev" class="swiper-button-prev" />
-        <div slot="button-next" class="swiper-button-next" />
       </swiper>
     </div>
   </client-only>
