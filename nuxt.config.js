@@ -32,7 +32,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: "./plugins/vue-awesome-swiper.client.js", mode: "client" }
+    { src: './plugins/vue-awesome-swiper.client.js', mode: 'client' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,8 +41,11 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/fontawesome',
     '@nuxtjs/eslint-module',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    // https://github.com/nuxt-community/svg-module
+    '@nuxtjs/svg'
   ],
 
   styleResources: {
@@ -87,6 +90,12 @@ export default {
       theme_color: '#000080',
       lang: 'it'
 
+    }
+  },
+
+  fontawesome: {
+    icons: {
+      solid: ['faHome', 'faList', 'faFlag', 'faFutbol']
     }
   },
 

@@ -4,6 +4,9 @@
     <main role="main">
       <Nuxt />
     </main>
+    <footer class="footer fixed-bottom">
+      <Navbar />
+    </footer>
     <!--footer class="footer">
       <div class="container-fluid">
         Sangios League

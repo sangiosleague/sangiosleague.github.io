@@ -68,6 +68,13 @@ body {
     align-items: center !important;
     flex-direction: column;
     flex-wrap: nowrap;
+
+    div:first-child > .card {
+      margin: 1rem;
+    }
+    div > .card {
+      margin: 0 1rem 1rem 1rem;
+    }
   }
 }
 </style>
