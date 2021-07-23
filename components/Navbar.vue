@@ -1,19 +1,19 @@
 <template>
   <b-navbar>
     <b-navbar-nav class="mr-auto d-flex">
-      <b-nav-item href="#home" class="flex-fill">
+      <b-nav-item href="#home" class="flex-fill" :to="'/'">
         <font-awesome-icon :icon="['fas', 'home']" />
         <div>Home</div>
       </b-nav-item>
-      <b-nav-item href="#futbol" class="flex-fill">
+      <b-nav-item href="#futbol" class="flex-fill" :to="'/matches'">
         <font-awesome-icon :icon="['fas', 'futbol']" />
         <div>Matches</div>
       </b-nav-item>
-      <b-nav-item href="#list" class="flex-fill">
+      <b-nav-item href="#list" class="flex-fill" :to="'/groups'">
         <font-awesome-icon :icon="['fas', 'list']" />
         <div>Groups</div>
       </b-nav-item>
-      <b-nav-item href="#flag" class="flex-fill">
+      <b-nav-item href="#flag" class="flex-fill" :to="'/teams'">
         <font-awesome-icon :icon="['fas', 'flag']" />
         <div>Teams</div>
       </b-nav-item>
