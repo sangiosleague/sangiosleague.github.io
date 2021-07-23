@@ -5,9 +5,10 @@ body {
 }
 
 body {
-  background: transparent;
   display: flex;
   flex-direction: column;
+  background: url(/logo_watermark.svg) no-repeat center center fixed;
+  background-size: contain;
 }
 
 h1 {
@@ -16,7 +17,7 @@ h1 {
 
 /* main */
 main[role="main"] {
-  /* padding: 0.3rem; */
+  padding-bottom: 50px;
   flex-grow: 1 !important;
   width: 100%;
 }

@@ -1,29 +1,36 @@
 <template>
   <client-only>
-    <swiper class="swiper" :options="swiperOption">
-      <swiper-slide v-for="slide in slides" :key="slide">
-        <div
-          v-for="card in slide"
-          :key="card"
-        >
-          <b-card
-
-            :title="card"
-            tag="article"
+    <div>
+      <h1 class="fixed-top">
+        matches
+      </h1>
+      <swiper class="swiper gallery-thumbs" :options="swiperOption">
+        <swiper-slide v-for="slide in slides" :key="slide.card">
+          <div
+            v-for="card in slide"
+            :key="card"
           >
-            <b-row no-gutters>
-              <b-card-text>
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-              </b-card-text>
+            <b-card
 
-              <b-button href="#" variant="primary">
-                Go somewhere
-              </b-button>
-            </b-row>
-          </b-card>
-        </div>
-      </swiper-slide>
-    </swiper>
+              :title="card"
+              tag="article"
+            >
+              <b-row no-gutters>
+                <b-card-text>
+                  Some quick example text to build on the card title and make up the bulk of the card's content.
+                </b-card-text>
+
+                <b-button href="#" variant="primary">
+                  Go somewhere
+                </b-button>
+              </b-row>
+            </b-card>
+          </div>
+        </swiper-slide>
+        <div slot="button-prev" class="swiper-button-prev" />
+        <div slot="button-next" class="swiper-button-next" />
+      </swiper>
+    </div>
   </client-only>
 </template>
 
@@ -44,7 +51,6 @@ export default {
         },
         pagination: {
           el: '.swiper-pagination'
-          // type: "progressbar",
         },
         loop: false
       }
@@ -54,11 +60,12 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  background: url(/logo_watermark.svg) no-repeat center center fixed;
-  background-size: contain;
+main[role="main"]>div:first-child {
+  padding-top: 50px;
+  h1 {
+    background-color: #fff;
+  }
 }
-
 .swiper {
   height: 100%;
 
