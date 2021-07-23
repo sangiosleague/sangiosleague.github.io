@@ -3,7 +3,7 @@
     <div>
       <div class="fixed-top">
         <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
-          <swiper-slide v-for="index in 4" :key="index">
+          <swiper-slide v-for="index in slides.length" :key="index">
             <span> matchday {{ index }}</span>
           </swiper-slide>
         </swiper>
