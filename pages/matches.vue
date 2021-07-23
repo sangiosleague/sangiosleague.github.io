@@ -1,10 +1,14 @@
 <template>
   <client-only>
     <div>
-      <h1 class="fixed-top">
-        matches
-      </h1>
-      <swiper class="swiper gallery-thumbs" :options="swiperOption">
+      <div class="fixed-top">
+        <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
+          <swiper-slide v-for="index in 4" :key="index">
+            <span> matchday {{ index }}</span>
+          </swiper-slide>
+        </swiper>
+      </div>
+      <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
         <swiper-slide v-for="slide in slides" :key="slide.card">
           <div
             v-for="card in slide"
@@ -37,7 +41,7 @@ export default {
   data () {
     return {
       gitUrl: `https://github.com/sangiosleague/sangiosleague.github.io/commit/${process.env.NUXT_ENV_CURRENT_GIT_SHA}`,
-      slides: [['card 1', 'card 2', 'card 3', 'card 4', 'card 5'], ['card 6']],
+      slides: [['match 1', 'match 2', 'match 3', 'match 4', 'match 5', 'match 6'], ['match 7', 'match 8', 'match 9', 'match 10'], ['semi final 1', 'semi final 2'], ['final']],
       swiperOption: {
         slidesPerView: 1,
         keyboard: {
@@ -51,7 +55,27 @@ export default {
           el: '.swiper-pagination'
         },
         loop: false
+      },
+      swiperOptionThumbs: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        slideToClickedSlide: true
+      },
+      swiperTop () {
+        return this.$refs.swiperTop.swiper
+      },
+      swiperThumbs () {
+        return this.$refs.swiperThumbs.swiper
       }
+    }
+  },
+  methods: {
+    onThumbnailChange (val) {
+      this.$refs.swiperTop.$swiper.slideTo(val.activeIndex)
+    },
+    onTopChange (val) {
+      this.$refs.swiperThumbs.$swiper.slideTo(val.activeIndex)
     }
   }
 }
@@ -62,6 +86,16 @@ main[role="main"]>div:first-child {
   padding-top: 50px;
   h1 {
     background-color: #fff;
+  }
+}
+
+.swiper#swiperThumbs {
+  .swiper-slide {
+    width: 25%;
+    color: #aaa;
+  }
+  .swiper-slide-active {
+    color: #000;
   }
 }
 .swiper {
