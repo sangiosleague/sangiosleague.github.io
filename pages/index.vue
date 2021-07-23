@@ -6,8 +6,8 @@
 
 <script>
 export default {
-  async asyncData () {
-    const response = await fetch('http://localhost:3001/api/count')
+  async asyncData ({ $config: { baseURL } }) {
+    const response = await fetch(`${baseURL}/api/count`)
     return await response.json() // { count: 123 }
   },
   data () {
@@ -19,8 +19,8 @@ export default {
     title: 'Nuxt with Upstash'
   },
   methods: {
-    async getCount () {
-      const response = await fetch('http://localhost:3001/api/count')
+    async getCount ({ $config: { baseURL } }) {
+      const response = await fetch(`${baseURL}/api/count`)
       const data = await response.json()
       this.count = data.count
     }

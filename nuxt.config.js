@@ -2,6 +2,10 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
+  publicRuntimeConfig: {
+    baseURL: process.env.BASE_URL || 'https://sangiosleague.it'
+  },
+
   server: {
     port: 3001 // default: 3000
   },
