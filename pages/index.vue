@@ -1,10 +1,11 @@
 <template>
   <p class="">
-    View Count: <b>{{ count }}</b>
+    View Count: <b>12</b>
   </p>
 </template>
 
 <script>
+/*
 export default {
   async asyncData ({ $config: { baseURL } }) {
     const response = await fetch(`${baseURL}/api/count`)
@@ -26,6 +27,7 @@ export default {
     }
   }
 }
+*/
 </script>
 
 <style lang="scss">
