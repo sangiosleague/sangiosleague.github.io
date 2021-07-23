@@ -19,8 +19,7 @@ main[role="main"] {
 /* footer */
 .footer {
   z-index: 999;
-  color: darkgray;
-  background: #cbe18e77; /*linear-gradient(0deg, #cbe18e, $footGradient 100%); */
+  background: linear-gradient(0deg, #fff, $footGradient 100%);
 }
 /* kitchen-sink */
 ul,
