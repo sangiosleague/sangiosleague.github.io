@@ -49,8 +49,16 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
     // https://github.com/nuxt-community/svg-module
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
+    '@nuxtjs/moment'
   ],
+
+  moment: {
+    defaultLocale: 'it',
+    locales: ['it'],
+    defaultTimezone: 'Europe/Rome',
+    timezone: false
+  },
 
   styleResources: {
     scss: [
