@@ -1,5 +1,5 @@
 <template>
-  <div id="teams">
+  <div id="teams" class="container">
     <h1>teams</h1>
     <b-img
       v-for="team in teams"
