@@ -1,7 +1,7 @@
 <template>
-  <h2 class="text-center" style="margin-top: 1rem;">
+  <div id="daysUntilKickOff" class="text-center">
     <b>{{ daysUntilKickOff }} days </b> until kick-off
-  </h2>
+  </div>
 </template>
 
 <script>
@@ -16,5 +16,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+#daysUntilKickOff {
+  font-size:  x-large;
+  margin-top: 1rem;
+}
 </style>

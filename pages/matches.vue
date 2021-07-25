@@ -67,7 +67,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 main[role="main"]>div:first-child {
   padding-top: 50px;
   h1 {
