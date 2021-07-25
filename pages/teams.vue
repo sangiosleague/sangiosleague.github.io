@@ -1,15 +1,24 @@
 <template>
   <div>
     <h1>teams</h1>
-    <b-img v-for="team in teams" :key="team" :src="`/images/teams/${team}.png`" fluid alt="Fluid image" />
+    <b-img v-for="team in teams" :key="team" :src="`/images/${team}.png`" fluid alt="Fluid image" />
   </div>
 </template>
 
 <script>
 export default {
-  async asyncData ({ $axios }) {
-    const teams = await $axios.$get('/api/teams.json')
-    return { teams }
+  data () {
+    return {
+      teams: []
+    }
+  },
+  mounted () {
+    this.getTeams()
+  },
+  methods: {
+    async getTeams () {
+      this.teams = await this.$store.dispatch('getTeams')
+    }
   }
 }
 </script>

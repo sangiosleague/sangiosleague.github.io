@@ -3,16 +3,19 @@ export default {
   target: 'static', // 'server',
 
   publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'https://sangiosleague.it'
+    baseURL: process.env.BASE_URL || 'https://sangiosleague.it',
+    axios: {
+      baseURL: process.env.API_URL || 'https://sangiosleague.it/api/v1'
+    }
+  },
+
+  axios: {
+    proxyHeaders: false,
+    credentials: false
   },
 
   server: {
     port: process.env.PORT || 3001 // default: 3000
-  },
-
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-    baseURL: process.env.BASE_URL || 'https://sangiosleague.it'
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -84,9 +87,6 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content'
   ],
-
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
