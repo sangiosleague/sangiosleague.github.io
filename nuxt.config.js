@@ -10,6 +10,11 @@ export default {
     port: process.env.PORT || 3001 // default: 3000
   },
 
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.BASE_URL || 'https://sangiosleague.it'
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'SangioS League',
