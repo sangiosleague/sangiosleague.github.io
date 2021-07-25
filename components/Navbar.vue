@@ -17,6 +17,10 @@
         <font-awesome-icon :icon="['fas', 'flag']" />
         <div>Teams</div>
       </b-nav-item>
+      <b-nav-item href="#flag" class="flex-fill" :to="'/more'">
+        <font-awesome-icon :icon="['fas', 'ellipsis-h']" />
+        <div>More</div>
+      </b-nav-item>
     </b-navbar-nav>
   </b-navbar>
 </template>

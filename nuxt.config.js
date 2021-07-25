@@ -1,6 +1,6 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server', // 'static',
+  target: 'static', // 'server',
 
   publicRuntimeConfig: {
     baseURL: process.env.BASE_URL || 'https://sangiosleague.it'
@@ -99,7 +99,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faHome', 'faList', 'faFlag', 'faFutbol']
+      solid: ['faHome', 'faList', 'faFlag', 'faFutbol', 'faEllipsisH']
     }
   },
 
