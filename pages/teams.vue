@@ -1,7 +1,7 @@
 <template>
   <div id="teams" class="container">
-    <h1>teams</h1>
     <div v-if="!selectedTeam">
+      <h1>teams</h1>
       <b-table
         striped
         hover
@@ -24,11 +24,16 @@
       </b-table>
     </div>
     <div v-if="selectedTeam">
-      <h2>
-        <a @click="selectTeam(undefined)">
+      <div class="float-left d-inline">
+        <button
+          type="button"
+          class="btn btn-light"
+          style="position: absolute; top: 3.5rem; left: 0.5rem !important; border-radius: 50%"
+          @click="selectTeam(undefined)"
+        >
           <font-awesome-icon :icon="['fas', 'arrow-left']" />
-        </a>
-      </h2>
+        </button>
+      </div>
       <b-img
         :src="`/images/${year}/teams/${selectedTeam}.png`"
         fluid
@@ -77,6 +82,9 @@ export default {
 </script>
 
 <style lang="scss">
+#teams {
+  padding: 0;
+}
 #teams img.img-thumbnail{
   max-width: 200px;
 }
