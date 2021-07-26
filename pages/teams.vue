@@ -81,6 +81,14 @@ export default {
   },
   mounted () {
     this.getTeams()
+    // eslint-disable-next-line no-console
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && this.selectedTeam !== undefined) {
+        this.$store.commit('selectTeam', {
+          team: undefined
+        })
+      }
+    })
   },
   methods: {
     selectTeam (team) {
