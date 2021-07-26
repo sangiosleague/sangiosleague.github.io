@@ -23,7 +23,7 @@
     "nuxt": "^2.15.7",
     "sass": "^1.35.2",
     "sass-loader": "^10.1.1",
-    "swiper": "^6.7.5",
+    "swiper": "^6.8.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-lodash": "^2.1.2"
   },
