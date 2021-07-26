@@ -2,24 +2,22 @@
   <div id="teams" class="container">
     <h1>teams</h1>
 
-    <b-table striped hover :items="teams" />
-
-    <!-- div
-      v-for="value in teams"
-      :key="value.id"
+    <b-table
+      striped
+      hover
+      :fields="fields"
+      :items="teams"
+      responsive="sm"
+      thead-class="d-none"
     >
-      <a
-        href="#"
-      >{{ value.name }}</a>
-    </div>
-    <b-img
-      v-for="value in teams"
-      :key="value.id"
-      :src="`/images/${year}/teams/${value.id}.png`"
-      rounded
-      fluid
-      alt="Fluid image"
-    / -->
+      <template #cell(id)="data">
+        <b-img
+          :src="`/images/${year}/teams/${data.value}.png`"
+          thumbnail
+          alt="thumbnail image"
+        />
+      </template>
+    </b-table>
   </div>
 </template>
 
@@ -27,6 +25,11 @@
 export default {
   data () {
     return {
+      fields: [
+        // A column that needs custom formatting
+        'name',
+        { key: 'id', label: '' }
+      ],
       teams: []
     }
   },
@@ -46,9 +49,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #teams img {
-  padding: 1rem;
+  /* padding: 1rem;
   border-radius: 2rem !important;
+  */
+  max-width: 75%;
+}
+td:last-child {
+  text-align: right !important;
 }
 </style>

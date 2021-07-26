@@ -1,6 +1,6 @@
 [
   { "id" : "DivanoKiev", "name" : "Divano Kiev" },
-  { "name" : "Gli Amici Di Claudio" },
+  { "id" : "GliAmiciDiClaudio", "name" : "Gli Amici Di Claudio" },
   { "id" : "LARITeam", "name" : "LA. RI. Team" },
   { "id" : "LuBarrottDogliola", "name" : "Lu Barrott Dogliola" },
   { "id" : "Nonivoglij", "name" : "Nonivoglij" },
