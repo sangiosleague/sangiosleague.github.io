@@ -24,11 +24,11 @@
       </b-table>
     </div>
     <div v-if="selectedTeam">
-      <h1>
+      <h2>
         <a @click="selectTeam(undefined)">
           <font-awesome-icon :icon="['fas', 'arrow-left']" />
         </a>
-      </h1>
+      </h2>
       <b-img
         :src="`/images/${year}/teams/${selectedTeam}.png`"
         fluid
