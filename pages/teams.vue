@@ -39,6 +39,13 @@
         fluid
         alt="fuild image"
       />
+      <b-table
+        striped
+        hover
+        :items="teamMap[selectedTeam].players"
+        responsive="sm"
+        thead-class="d-none"
+      />
     </div>
   </div>
 </template>
@@ -57,6 +64,13 @@ export default {
   computed: {
     teams () {
       return this.$store.state.teams
+    },
+    teamMap () {
+      const qwe = this._.keyBy(this.$store.state.teams, 'id')
+      // this._.mapValues(this._.keyBy(this.$store.state.teams, 'id'), 'players')
+      // eslint-disable-next-line no-console
+      console.log(qwe)
+      return qwe
     },
     selectedTeam () {
       return this.$store.state.selectedTeam

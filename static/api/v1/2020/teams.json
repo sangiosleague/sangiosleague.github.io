@@ -1,12 +1,27 @@
 [
-  { "id" : "DivanoKiev", "name" : "Divano Kiev" },
-  { "id" : "GliAmiciDiClaudio", "name" : "Gli Amici Di Claudio" },
-  { "id" : "LARITeam", "name" : "LA. RI. Team" },
-  { "id" : "LuBarrottDogliola", "name" : "Lu Barrott Dogliola" },
-  { "id" : "Nonivoglij", "name" : "Nonivoglij" },
-  { "id" : "Quota100", "name" : "Quota 100" },
-  { "id" : "SergentTeam", "name" : "Sergent Team" },
-  { "id" : "SRAT", "name" : "Loris Autonoleggio SRAT" },
-  { "id" : "TDEU", "name" : "Il Tartufo di Ennio United" },
-  { "id" : "Wagliun20", "name" : "Wagliun 2.0" }
+  { "id": "DivanoKiev", "name": "Divano Kiev", "players": [] },
+  { "id": "GliAmiciDiClaudio", "name": "Gli Amici Di Claudio", "players": [] },
+  { "id": "LARITeam", "name": "LA. RI. Team", "players": [] },
+  { "id": "LuBarrottDogliola", "name": "Lu Barrott Dogliola", "players": [] },
+  { "id": "Nonivoglij", "name": "Nonivoglij", "players": [] },
+  { "id": "Quota100", "name": "Quota 100", "players": [] },
+  { "id": "SergentTeam", "name": "Sergent Team", "players": [] },
+  { "id": "SRAT", "name": "Loris Autonoleggio SRAT", "players": [] },
+  {
+    "id": "TDEU",
+    "name": "Il Tartufo di Ennio United",
+    "players": [
+      { "firstName": "Claudio", "lastName": "Monaco", "number": 1 },
+      { "firstName": "Giuliano", "lastName": "Rossi", "number": 3 },
+      { "firstName": "Davide", "lastName": "Burlon", "number": 7 },
+      { "firstName": "Paul", "lastName": "Thiebaud", "number": 9 },
+      { "firstName": "Alessio", "lastName": "Grosso", "number": 10 },
+      { "firstName": "William", "lastName": "Campagna", "number": 11 },
+      { "firstName": "Federico", "lastName": "Grosso", "number": 17 },
+      { "firstName": "Luca", "lastName": "Falorio", "number": 0 },
+      { "firstName": "Michele", "lastName": "Notarangelo", "number": 0 },
+      { "firstName": "Francesco", "lastName": "Zucchini", "number": 0 }
+    ]
+  },
+  { "id": "Wagliun20", "name": "Wagliun 2.0", "players": [] }
 ]
