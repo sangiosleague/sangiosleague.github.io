@@ -46,11 +46,13 @@ export default {
         // A column that needs custom formatting
         'name',
         { key: 'id', label: '' }
-      ],
-      teams: []
+      ]
     }
   },
   computed: {
+    teams () {
+      return this.$store.state.teams
+    },
     selectedTeam () {
       return this.$store.state.selectedTeam
     },
@@ -68,7 +70,7 @@ export default {
       })
     },
     async getTeams () {
-      this.teams = await this.$store.dispatch('getTeams')
+      await this.$store.dispatch('getTeams')
     }
   }
 }

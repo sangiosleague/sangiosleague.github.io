@@ -1,5 +1,6 @@
 export const state = () => ({
   year: '2020',
+  teams: [],
   selectedTeam: undefined
 })
 
@@ -8,19 +9,30 @@ export const getters = {
 
 export const mutations = {
   setYear (state, payload) {
-    if (payload.year === '2020' || payload.year === '2021') {
+    if ((payload.year === '2020' || payload.year === '2021') && state.year !== payload.year) {
       state.year = payload.year
-      this.$forceUpdate()
+      state.teams = []
+      state.selectedTeam = undefined
+      // eslint-disable-next-line no-console
+      console.log('setYear', state.year)
     }
+  },
+  setTeams (state, payload) {
+    state.teams = payload
+    // eslint-disable-next-line no-console
+    console.log('setTeams', state.teams)
   },
   selectTeam (state, payload) {
     state.selectedTeam = payload.team
+    // eslint-disable-next-line no-console
+    console.log('selectTeam', state.selectedTeam)
   }
 }
 
 export const actions = {
-  async getTeams ({ state }) {
+  async getTeams ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/teams.json', { progress: false })
+    commit('setTeams', res.data)
     return res.data
   }
 }
