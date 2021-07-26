@@ -1,5 +1,5 @@
 <template>
-  <div id="daysUntilKickOff" class="text-center">
+  <div v-if="$store.state.year === '2021'" id="daysUntilKickOff" class="text-right m-2">
     <b>{{ daysUntilKickOff }} days </b> until kick-off
   </div>
 </template>
