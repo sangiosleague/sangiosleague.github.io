@@ -1,6 +1,6 @@
 export const state = () => ({
   year: '2020',
-  team: undefined
+  selectedTeam: undefined
 })
 
 export const getters = {
@@ -11,6 +11,9 @@ export const mutations = {
     if (payload.year === '2020' || payload.year === '2021') {
       state.year = payload.year
     }
+  },
+  selectTeam (state, payload) {
+    state.selectedTeam = payload.team
   }
 }
 

@@ -112,7 +112,7 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faHome', 'faList', 'faFlag', 'faFutbol', 'faEllipsisH']
+      solid: ['faHome', 'faList', 'faFlag', 'faFutbol', 'faEllipsisH', 'faArrowLeft']
     }
   },
 
@@ -121,6 +121,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend (config, { isClient }) {
+      // Extend only webpack config for client-bundle
+      if (isClient) {
+        config.devtool = 'source-map'
+      }
+    }
   },
 
   serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }]
