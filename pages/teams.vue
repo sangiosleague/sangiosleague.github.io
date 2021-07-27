@@ -69,6 +69,7 @@
 
 <script>
 export default {
+  scrollToTop: true,
   data () {
     return {
       fields: [
@@ -119,12 +120,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #teams img.thmb {
   max-width: 170px;
   border-radius: 50%;
 }
-td:last-child {
+#teams td:last-child {
   text-align: right !important;
 }
 </style>
