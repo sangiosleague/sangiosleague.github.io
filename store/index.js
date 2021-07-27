@@ -53,6 +53,10 @@ export const mutations = {
 }
 
 export const actions = {
+  getYear ({ commit, state }) {
+    // eslint-disable-next-line no-console
+    console.log(state.year)
+  },
   async getTeams ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/teams.json', { progress: false })
     const teams = res.data

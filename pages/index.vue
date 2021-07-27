@@ -41,12 +41,18 @@ export default {
       return this.$store.state.year
     }
   },
+  mounted () {
+    this.getYear()
+  },
   methods: {
     async onSetYear (y) {
       this.$store.commit('setYear', {
         year: y
       })
       await this.$store.dispatch('getTeams')
+    },
+    async getYear () {
+      await this.$store.dispatch('getYear')
     }
   }
 }
