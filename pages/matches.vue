@@ -8,7 +8,8 @@
             :key="day"
           >
             <span>
-              {{ day }}</span>
+              {{ $moment(day, 'L').format('D MMMM YYYY') }}
+            </span>
           </swiper-slide>
         </swiper>
       </div>
