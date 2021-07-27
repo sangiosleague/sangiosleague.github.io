@@ -1,5 +1,5 @@
 <template>
-  <h1>more</h1>
+  <h1><font-awesome-icon :icon="['fas', 'ellipsis-h']" /></h1>
 </template>
 
 <script>
