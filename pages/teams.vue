@@ -39,13 +39,15 @@
         fluid
         alt="fuild image"
       />
-      <b-table
-        striped
-        hover
-        :items="teamMap[selectedTeam].players"
-        responsive="sm"
-        thead-class="d-none"
-      />
+      <b-card>
+        <b-table
+          striped
+          hover
+          :items="teamMap[selectedTeam].players"
+          responsive="sm"
+          thead-class="d-none"
+        />
+      </b-card>
     </div>
   </div>
 </template>
@@ -100,9 +102,6 @@ export default {
 </script>
 
 <style lang="scss">
-#teams {
-  padding: 0;
-}
 #teams img.img-thumbnail{
   max-width: 200px;
 }

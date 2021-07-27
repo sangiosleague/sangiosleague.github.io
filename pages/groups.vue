@@ -8,6 +8,7 @@
     >
       <h1>{{ group }}</h1>
       <b-table
+        id="groups"
         striped
         hover
         :items="fixtures"
@@ -115,7 +116,7 @@ export default {
 </script>
 
 <style lang="scss">
-tbody tr:nth-child(-n + 2) {
+#groups tbody tr:nth-child(-n + 2) {
     border-left: 5px solid turquoise;
 }
 </style>

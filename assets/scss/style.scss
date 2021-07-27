@@ -8,8 +8,12 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  /*
   background: url(/logo_watermark.svg) no-repeat center center fixed;
   background-size: contain;
+  */
+  background: url(/top-image.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 h1 {
