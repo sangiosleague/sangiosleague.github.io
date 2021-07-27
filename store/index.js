@@ -1,5 +1,5 @@
 export const state = () => ({
-  year: '2020',
+  year: '2021',
   teams: [],
   teamMap: [],
   selectedTeam: undefined,
