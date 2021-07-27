@@ -1,12 +1,13 @@
 <template>
   <b-card>
-    <div style="font-size: smaller; font-style: italic;">
+    <div style="font-size: smaller">
       <span v-if="!onlyHour">
         {{ $moment(fixture.when).format('LLLL') }}
       </span>
       <span v-if="onlyHour">
         {{ $moment(fixture.when).format('H:mm') }}
       </span>
+      <span class="float-right">{{ fixture.group }}</span>
     </div>
     <div class="d-flex flex-column">
       <div class="text-left" :style="fixture.teams[0].goals > fixture.teams[1].goals ? 'font-weight: bold' : ''">
@@ -20,7 +21,7 @@
       <div class="text-right" :style="fixture.teams[0].goals < fixture.teams[1].goals ? 'font-weight: bold' : ''">
         {{ teamMap[fixture.teams[1].id].name }}
       </div>
-      <div class="text-center">
+      <div v-if="fixture.youtube" class="text-center">
         <a :href="fixture.youtube">Watch highlights</a>
       </div>
     </div>
