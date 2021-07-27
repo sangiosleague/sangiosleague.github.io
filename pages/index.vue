@@ -11,7 +11,7 @@
       </b-dropdown>
     </header>
 
-    <div v-if="$store.state.year === '2021'" id="daysUntilKickOff" class="text-right m-2">
+    <div v-if="$store.state.year === '2021'" id="daysUntilKickOff" class="text-right m-2" style="color: white">
       <b>{{ daysUntilKickOff }} days </b> until kick-off
     </div>
   </div>

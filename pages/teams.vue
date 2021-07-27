@@ -2,26 +2,28 @@
   <div id="teams" class="container">
     <div v-if="!selectedTeam">
       <h1>teams</h1>
-      <b-table
-        striped
-        hover
-        :fields="fields"
-        :items="teams"
-        responsive="sm"
-        thead-class="d-none"
-      >
-        <template #cell(id)="data">
-          <a
-            @click="selectTeam(data.value)"
-          >
-            <b-img
-              :src="`/images/${year}/teams/${data.value}.png`"
-              thumbnail
-              alt="thumbnail image"
-            />
-          </a>
-        </template>
-      </b-table>
+      <b-card>
+        <b-table
+          striped
+          hover
+          :fields="fields"
+          :items="teams"
+          responsive="sm"
+          thead-class="d-none"
+        >
+          <template #cell(id)="data">
+            <a
+              @click="selectTeam(data.value)"
+            >
+              <b-img
+                class="thmb"
+                :src="`/images/${year}/teams/${data.value}.png`"
+                alt="thumbnail image"
+              />
+            </a>
+          </template>
+        </b-table>
+      </b-card>
     </div>
     <div v-if="selectedTeam">
       <div class="float-left d-inline">
@@ -102,8 +104,9 @@ export default {
 </script>
 
 <style lang="scss">
-#teams img.img-thumbnail{
-  max-width: 200px;
+#teams img.thmb {
+  max-width: 170px;
+  border-radius: 50%;
 }
 td:last-child {
   text-align: right !important;

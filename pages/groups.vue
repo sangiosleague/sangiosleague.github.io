@@ -1,19 +1,24 @@
 <template>
   <div class="container">
-    <h1>groups</h1>
+    <h1>Groups</h1>
     <div
       v-for="(fixtures, group) in fixturesMap"
       :key="group"
       class="card"
+      style="margin-bottom:1rem"
     >
-      <h1>{{ group }}</h1>
+      <h3 style="margin-left: .5rem">Group {{ group }}</h3>
       <b-table
         id="groups"
         striped
         hover
         :items="fixtures"
         responsive="sm"
-      />
+      >
+        <template #cell(name)="data">
+          {{ teamMap[data.item.name].name }}
+        </template>
+      </b-table>
     </div>
   </div>
 </template>
@@ -21,6 +26,9 @@
 <script>
 export default {
   computed: {
+    teamMap () {
+      return this.$store.state.teamMap
+    },
     fixturesMap () {
       const map = { A: {}, B: {} }
       const directs = {}
@@ -117,6 +125,7 @@ export default {
 
 <style lang="scss">
 #groups tbody tr:nth-child(-n + 2) {
-    border-left: 5px solid turquoise;
+    border-left: 6px solid turquoise; // #40A0E0
+    border-right: 6px solid turquoise;
 }
 </style>
