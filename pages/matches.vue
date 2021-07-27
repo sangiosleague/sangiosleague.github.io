@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div>
+    <div id="matches" class="container">
       <div class="fixed-top">
         <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
           <swiper-slide
