@@ -1,7 +1,5 @@
 <template>
   <b-card>
-    <!-- :title="`${fixture.teams[0].id} ${fixture.teams[0].goals} - ${fixture.teams[1].goals} ${fixture.teams[1].id}`" tag="article"
-    class="d-flex justify-content-center align-items-center bd-highlight mb-3"-->
     <div style="font-size: smaller; font-style: italic;">
       {{ $moment(fixture.when).format('LLLL') }}
     </div>

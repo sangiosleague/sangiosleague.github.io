@@ -3,18 +3,22 @@
     <div>
       <div class="fixed-top">
         <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
-          <swiper-slide v-for="index in slides.length" :key="index">
-            <span> matchday {{ index }}</span>
+          <swiper-slide
+            v-for="(fixtures, day) in fixturesMap"
+            :key="day"
+          >
+            <span>
+              {{ day }}</span>
           </swiper-slide>
         </swiper>
       </div>
       <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
-        <swiper-slide v-for="slide in slides" :key="slide.card">
+        <swiper-slide v-for="(fixtures, day) in fixturesMap" :key="day">
           <div
-            v-for="card in slide"
-            :key="card"
+            v-for="fixture in fixtures"
+            :key="fixture.id"
           >
-            <Match :title="card" />
+            <Match :fixture="fixture" />
           </div>
         </swiper-slide>
       </swiper>
@@ -27,7 +31,6 @@ export default {
   data () {
     return {
       gitUrl: `https://github.com/sangiosleague/sangiosleague.github.io/commit/${process.env.NUXT_ENV_CURRENT_GIT_SHA}`,
-      slides: [['match 1', 'match 2', 'match 3', 'match 4', 'match 5', 'match 6'], ['match 7', 'match 8', 'match 9', 'match 10'], ['semi final 1', 'semi final 2'], ['final']],
       swiperOption: {
         slidesPerView: 1,
         keyboard: {
@@ -56,13 +59,40 @@ export default {
       }
     }
   },
+  computed: {
+    fixturesMap () {
+      // eslint-disable-next-line no-console
+      console.log(this.$store.state.fixtures)
+      const moment = this.$moment
+      const ret = this._.reduce(this.$store.state.fixtures, function (result, value, key) {
+        // eslint-disable-next-line no-console
+        console.log('result', result)
+        const day = moment(value.when).format('L')
+        if (day) {
+          (result[day] || (result[day] = [])).push(value)
+        }
+        return result
+      }, {})
+      // eslint-disable-next-line no-console
+      console.log('RET RET', ret)
+      return ret
+      // return this.$store.state.fixtures
+    }
+  },
+  mounted () {
+    this.getFixtures()
+  },
   methods: {
     onThumbnailChange (val) {
       this.$refs.swiperTop.$swiper.slideTo(val.activeIndex)
     },
     onTopChange (val) {
       this.$refs.swiperThumbs.$swiper.slideTo(val.activeIndex)
+    },
+    async getFixtures () {
+      await this.$store.dispatch('getFixtures')
     }
+
   }
 }
 </script>

@@ -1,11 +1,22 @@
 [
   {
-    "id": "TDEU_vs_Wagliun20",
+    "id": "TDEU_Wagliun20",
     "group": "A",
     "when": "2020-08-08T22:00:00+02:00",
     "teams" : [
         { "id": "TDEU", "goals": 7 },
         { "id": "Wagliun20", "goals": 1 }
-    ]
+    ],
+    "youtube" : "https://youtu.be/INrvBDAq7UM"
+  },
+  {
+    "id": "Nonivoglij_TDEU",
+    "group": "A",
+    "when": "2020-08-09T22:00:00+02:00",
+    "teams" : [
+        { "id": "Nonivoglij", "goals": 3 },
+        { "id": "TDEU", "goals": 1 }
+    ],
+    "youtube": "https://youtu.be/cb1SAmh9LYE"
   }
 ]
