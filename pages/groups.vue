@@ -22,20 +22,77 @@ export default {
   computed: {
     fixturesMap () {
       const map = { A: {}, B: {} }
+      const directs = {}
+      function rememberDirect (left, right, val) {
+        if (!directs[left]) {
+          directs[left] = {}
+        }
+        directs[left][right] = val
+        // eslint-disable-next-line no-console
+        console.log(directs)
+      }
       this.$store.state.fixtures.forEach((fixture) => {
         if (fixture.group === 'A' || fixture.group === 'B') {
-          if (!map[fixture.group][fixture.teams[0].id]) {
-            map[fixture.group][fixture.teams[0].id] = {
-              name: fixture.teams[0].id,
-              totalGoals: 0
+          for (const left in [0, 1]) {
+            const nameLeft = fixture.teams[left].id
+            const right = (+left + 1) % 2
+            const nameRight = fixture.teams[right].id
+            let obj = map[fixture.group][fixture.teams[left].id]
+            if (!obj) {
+              obj = map[fixture.group][fixture.teams[left].id] = {
+                name: nameLeft,
+                Pts: 0,
+                PG: 0,
+                V: 0,
+                N: 0,
+                P: 0,
+                GF: 0,
+                GS: 0,
+                '⁺∕₋': 0
+              }
+            }
+            obj.GF += fixture.teams[left].goals
+            obj.GS += fixture.teams[right].goals
+            obj['⁺∕₋'] += (fixture.teams[left].goals - fixture.teams[right].goals)
+            obj.PG += 1
+            if (fixture.teams[left].goals > fixture.teams[right].goals) {
+              obj.V += 1
+              obj.Pts += 3
+              rememberDirect(nameLeft, nameRight, 1)
+            } else if (fixture.teams[left].goals < fixture.teams[right].goals) {
+              obj.P += 1
+              rememberDirect(nameLeft, nameRight, -1)
+            } else {
+              obj.N += 1
+              obj.Pts += 1
+              rememberDirect(nameLeft, nameRight, 0)
             }
           }
-          map[fixture.group][fixture.teams[0].id].totalGoals += fixture.teams[0].goals
         }
       })
-      // eslint-disable-next-line no-console
-      console.log('mapA', map.A)
-      return { A: Object.values(map.A), B: Object.values(map.B) }
+      function compare (a, b) {
+        // points
+        let diff = b.Pts - a.Pts
+        if (diff !== 0) {
+          return diff
+        }
+        // diff goals
+        diff = b['⁺∕₋'] - a['⁺∕₋']
+        if (diff !== 0) {
+          return diff
+        }
+        // goals
+        diff = b.GF - a.GF
+        if (diff !== 0) {
+          return diff
+        }
+        // scontri diretti
+        diff = directs[a.name][b.name]
+        if (diff !== 0) {
+          return diff
+        }
+      }
+      return { A: Object.values(map.A).sort(compare), B: Object.values(map.B).sort(compare) }
     },
     map () {
       return this.$store.state.map
@@ -58,4 +115,7 @@ export default {
 </script>
 
 <style lang="scss">
+tbody tr:nth-child(-n + 2) {
+    border-left: 5px solid turquoise;
+}
 </style>

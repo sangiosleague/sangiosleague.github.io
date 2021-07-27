@@ -102,8 +102,8 @@
     "group": "B",
     "when": "2020-08-10T22:30:00+02:00",
     "teams": [
-      { "id": "LARITeam", "goals": 2 },
-      { "id": "SRAT", "goals": 8 }
+      { "id": "LARITeam", "goals": 4 },
+      { "id": "SRAT", "goals": 3 }
     ],
     "youtube": "https://youtu.be/vG77hNhj_is"
   },
@@ -171,7 +171,7 @@
     "youtube": null
   },
   {
-    "group": "A",
+    "group": "B",
     "when": "2020-08-13T22:00:00+02:00",
     "teams": [
       { "id": "SergentTeam", "goals": 11 },
