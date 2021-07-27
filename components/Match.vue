@@ -9,7 +9,7 @@
       </span>
     </div>
     <div class="d-flex flex-column">
-      <div class="text-left" style="font-weight: bold">
+      <div class="text-left" :style="fixture.teams[0].goals > fixture.teams[1].goals ? 'font-weight: bold' : ''">
         {{ teamMap[fixture.teams[0].id].name }}
       </div>
       <div class="text-center" style="margin: 0 1rem; font-family: monospace;">
@@ -17,7 +17,7 @@
         <font-awesome-icon :icon="['fas', 'minus']" />
         <span style="font-size: larger;">{{ fixture.teams[1].goals }}</span>
       </div>
-      <div class="text-right">
+      <div class="text-right" :style="fixture.teams[0].goals < fixture.teams[1].goals ? 'font-weight: bold' : ''">
         {{ teamMap[fixture.teams[1].id].name }}
       </div>
       <div class="text-center">
@@ -59,3 +59,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.card-body {
+  padding: .75rem;
+}
+</style>
