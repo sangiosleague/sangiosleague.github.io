@@ -10,7 +10,7 @@
       <span class="float-right">{{ fixture.group }}</span>
     </div>
     <div class="d-flex flex-column">
-      <div class="text-left" :style="fixture.teams[0].goals > fixture.teams[1].goals ? 'font-weight: bold' : ''">
+      <div class="text-left" :style="winner(fixture, 0) ? 'font-weight: bold' : ''">
         {{ teamMap[fixture.teams[0].id].name }}
       </div>
       <div class="text-center" style="margin: 0 1rem; font-family: monospace;">
@@ -18,7 +18,10 @@
         <font-awesome-icon :icon="['fas', 'minus']" />
         <span style="font-size: larger;">{{ fixture.teams[1].goals }}</span>
       </div>
-      <div class="text-right" :style="fixture.teams[0].goals < fixture.teams[1].goals ? 'font-weight: bold' : ''">
+      <div v-if="fixture.teams[0].penalties && fixture.teams[1].penalties" class="text-center" style="font-style: italic; font-size: smaller">
+        D.C.R. ({{ fixture.teams[0].penalties }} - {{ fixture.teams[1].penalties }})
+      </div>
+      <div class="text-right" :style="winner(fixture, 1) ? 'font-weight: bold' : ''">
         {{ teamMap[fixture.teams[1].id].name }}
       </div>
       <div v-if="fixture.youtube" class="text-center">
@@ -56,7 +59,22 @@ export default {
       required: true
     }
   },
-  computed: {
+  methods: {
+    winner (fixture, index) {
+      const goals1 = fixture.teams[index].goals
+      const goals2 = fixture.teams[(index + 1) % 2].goals
+      if (goals1 === goals2) {
+        if (fixture.teams[0].penalties && fixture.teams[1].penalties) {
+          const penalties1 = fixture.teams[index].penalties
+          const penalties2 = fixture.teams[(index + 1) % 2].penalties
+          return penalties1 > penalties2
+        } else {
+          return false
+        }
+      } else {
+        return goals1 > goals2
+      }
+    }
   }
 }
 </script>

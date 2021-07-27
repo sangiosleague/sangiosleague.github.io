@@ -192,8 +192,8 @@
     "group": "semi final",
     "when": "2020-08-16T22:00:00+02:00",
     "teams": [
-      { "id": "DivanoKiev", "goals": 2 },
-      { "id": "SergentTeam", "goals": 2 }
+      { "id": "DivanoKiev", "goals": 2, "penalties": 1 },
+      { "id": "SergentTeam", "goals": 2, "penalties": 3 }
     ],
     "youtube": null
   },
