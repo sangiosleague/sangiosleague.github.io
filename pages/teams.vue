@@ -1,7 +1,7 @@
 <template>
-  <div id="teams" class="container">
+  <div id="Teams" class="container">
     <div v-if="!selectedTeam">
-      <h1>teams</h1>
+      <h1>Teams</h1>
       <b-card>
         <b-table
           striped
@@ -17,7 +17,7 @@
             >
               <b-img
                 class="thmb"
-                :src="`/images/${year}/teams/${data.value}.png`"
+                :src="`/images/${year}/teams/${data.value}.jpg`"
                 alt="thumbnail image"
               />
             </a>
