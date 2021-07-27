@@ -7,7 +7,9 @@
       class="card"
       style="margin-bottom:1rem"
     >
-      <h3 style="margin-left: .5rem">Group {{ group }}</h3>
+      <h3 style="margin-left: .5rem">
+        Group {{ group }}
+      </h3>
       <b-table
         id="groups"
         striped
@@ -15,8 +17,8 @@
         :items="fixtures"
         responsive="sm"
       >
-        <template #cell(name)="data">
-          {{ teamMap[data.item.name].name }}
+        <template #cell(team)="data">
+          {{ teamMap[data.item.team].name }}
         </template>
       </b-table>
     </div>
@@ -49,7 +51,7 @@ export default {
             let obj = map[fixture.group][fixture.teams[left].id]
             if (!obj) {
               obj = map[fixture.group][fixture.teams[left].id] = {
-                name: nameLeft,
+                team: nameLeft,
                 Pts: 0,
                 PG: 0,
                 V: 0,
@@ -96,7 +98,7 @@ export default {
           return diff
         }
         // scontri diretti
-        diff = directs[a.name][b.name]
+        diff = directs[a.team][b.team]
         if (diff !== 0) {
           return diff
         }

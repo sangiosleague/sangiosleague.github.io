@@ -7,6 +7,14 @@ export const state = () => ({
 })
 
 export const getters = {
+  getFixtures: state => (team) => {
+    return state.fixtures.reduce((accumulator, currentValue) => {
+      if (currentValue.teams[0].id === team || currentValue.teams[1].id === team) {
+        accumulator.push(currentValue)
+      }
+      return accumulator
+    }, [])
+  }
 }
 
 export const mutations = {

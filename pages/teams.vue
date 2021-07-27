@@ -2,7 +2,7 @@
   <div id="Teams" class="container">
     <div v-if="!selectedTeam">
       <h1>Teams</h1>
-      <b-card>
+      <b-card style="margin-bottom: 1rem;">
         <b-table
           striped
           hover
@@ -41,14 +41,27 @@
         fluid
         alt="fuild image"
       />
-      <b-card>
-        <b-table
-          striped
-          hover
-          :items="teamMap[selectedTeam].players"
-          responsive="sm"
-          thead-class="d-none"
-        />
+      <b-card no-body style="margin-bottom: 1rem;">
+        <b-tabs card>
+          <b-tab title="Matchs" active>
+            <div
+              v-for="fixture in $store.getters.getFixtures(selectedTeam)"
+              :key="fixture.id"
+              style="width: 100%"
+            >
+              <Match :fixture="fixture" :team-map="teamMap" />
+            </div>
+          </b-tab>
+          <b-tab title="Team">
+            <b-table
+              striped
+              hover
+              :items="teamMap[selectedTeam].players"
+              responsive="sm"
+              thead-class="d-none"
+            />
+          </b-tab>
+        </b-tabs>
       </b-card>
     </div>
   </div>
@@ -81,6 +94,7 @@ export default {
   },
   mounted () {
     this.getTeams()
+    this.getFixtures()
     // eslint-disable-next-line no-console
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.selectedTeam !== undefined) {
@@ -98,6 +112,9 @@ export default {
     },
     async getTeams () {
       await this.$store.dispatch('getTeams')
+    },
+    async getFixtures () {
+      await this.$store.dispatch('getFixtures')
     }
   }
 }
