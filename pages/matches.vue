@@ -62,9 +62,9 @@ export default {
   },
   computed: {
     fixturesMap () {
-      const moment = this.$moment
+      const $moment = this.$moment
       return this._.reduce(this.$store.state.fixtures, function (result, value, key) {
-        const day = moment(value.when).format('L')
+        const day = $moment(value.when).format('L')
         if (day) {
           (result[day] || (result[day] = [])).push(value)
         }
@@ -92,7 +92,6 @@ export default {
     async getFixtures () {
       await this.$store.dispatch('getFixtures')
     }
-
   }
 }
 </script>

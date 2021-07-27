@@ -28,7 +28,7 @@
         <button
           type="button"
           class="btn btn-light"
-          style="position: absolute; top: 3.5rem; left: 0.5rem !important; border-radius: 50%"
+          style="position: absolute; top: .5rem; left: 0.5rem !important; border-radius: 50%; background-color: rgba(255,255,255, .75)"
           @click="selectTeam(undefined)"
         >
           <font-awesome-icon :icon="['fas', 'arrow-left']" />
