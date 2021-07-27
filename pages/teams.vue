@@ -66,7 +66,7 @@ export default {
       return this.$store.state.teams
     },
     teamMap () {
-      return this._.keyBy(this.$store.state.teams, 'id')
+      return this.$store.state.teamMap
     },
     selectedTeam () {
       return this.$store.state.selectedTeam

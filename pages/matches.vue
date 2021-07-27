@@ -31,7 +31,6 @@
 export default {
   data () {
     return {
-      teamMap: {},
       gitUrl: `https://github.com/sangiosleague/sangiosleague.github.io/commit/${process.env.NUXT_ENV_CURRENT_GIT_SHA}`,
       swiperOption: {
         slidesPerView: 1,
@@ -71,15 +70,14 @@ export default {
         }
         return result
       }, {})
+    },
+    teamMap () {
+      return this.$store.state.teamMap
     }
-
   },
   mounted () {
     this.getFixtures()
     this.getTeams()
-    this.teamMap = this._.keyBy(this.$store.state.teams, 'id')
-    // eslint-disable-next-line no-console
-    console.log('teamMap', this.teamMap)
   },
   methods: {
     onThumbnailChange (val) {

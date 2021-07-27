@@ -1,6 +1,7 @@
 export const state = () => ({
   year: '2020',
   teams: [],
+  teamMap: [],
   selectedTeam: undefined,
   fixtures: []
 })
@@ -20,28 +21,33 @@ export const mutations = {
   },
   setTeams (state, payload) {
     state.teams = payload
-    // eslint-disable-next-line no-console
-    // console.log('setTeams', state.teams)
+    state.teamMap = state.teams.reduce((accumulator, currentValue) => {
+      accumulator[currentValue.id] = currentValue
+      return accumulator
+    }, {})
   },
   selectTeam (state, payload) {
     state.selectedTeam = payload.team
-    // eslint-disable-next-line no-console
-    // console.log('selectTeam', state.selectedTeam)
   },
   setFixtures (state, payload) {
     state.fixtures = payload
+    state.fixtures.forEach(function (element) {
+      element.id = element.teams[0].id + '_' + element.teams[1].id
+    })
   }
 }
 
 export const actions = {
   async getTeams ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/teams.json', { progress: false })
-    commit('setTeams', res.data)
-    return res.data
+    const teams = res.data
+    commit('setTeams', teams)
+    return teams
   },
   async getFixtures ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/fixtures.json', { progress: false })
-    commit('setFixtures', res.data)
-    return res.data
+    const fixtures = res.data
+    commit('setFixtures', fixtures)
+    return fixtures
   }
 }
