@@ -66,11 +66,7 @@ export default {
       return this.$store.state.teams
     },
     teamMap () {
-      const qwe = this._.keyBy(this.$store.state.teams, 'id')
-      // this._.mapValues(this._.keyBy(this.$store.state.teams, 'id'), 'players')
-      // eslint-disable-next-line no-console
-      console.log(qwe)
-      return qwe
+      return this._.keyBy(this.$store.state.teams, 'id')
     },
     selectedTeam () {
       return this.$store.state.selectedTeam

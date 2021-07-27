@@ -42,8 +42,6 @@ export const actions = {
   async getFixtures ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/fixtures.json', { progress: false })
     commit('setFixtures', res.data)
-    // eslint-disable-next-line no-console
-    console.log('getFixtures', state.fixtures)
     return res.data
   }
 }

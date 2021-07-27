@@ -17,8 +17,9 @@
           <div
             v-for="fixture in fixtures"
             :key="fixture.id"
+            style="width: 100%"
           >
-            <Match :fixture="fixture" />
+            <Match :fixture="fixture" :only-hour="true" :team-map="teamMap" />
           </div>
         </swiper-slide>
       </swiper>
@@ -30,6 +31,7 @@
 export default {
   data () {
     return {
+      teamMap: {},
       gitUrl: `https://github.com/sangiosleague/sangiosleague.github.io/commit/${process.env.NUXT_ENV_CURRENT_GIT_SHA}`,
       swiperOption: {
         slidesPerView: 1,
@@ -61,26 +63,23 @@ export default {
   },
   computed: {
     fixturesMap () {
-      // eslint-disable-next-line no-console
-      console.log(this.$store.state.fixtures)
       const moment = this.$moment
-      const ret = this._.reduce(this.$store.state.fixtures, function (result, value, key) {
-        // eslint-disable-next-line no-console
-        console.log('result', result)
+      return this._.reduce(this.$store.state.fixtures, function (result, value, key) {
         const day = moment(value.when).format('L')
         if (day) {
           (result[day] || (result[day] = [])).push(value)
         }
         return result
       }, {})
-      // eslint-disable-next-line no-console
-      console.log('RET RET', ret)
-      return ret
-      // return this.$store.state.fixtures
     }
+
   },
   mounted () {
     this.getFixtures()
+    this.getTeams()
+    this.teamMap = this._.keyBy(this.$store.state.teams, 'id')
+    // eslint-disable-next-line no-console
+    console.log('teamMap', this.teamMap)
   },
   methods: {
     onThumbnailChange (val) {
@@ -88,6 +87,9 @@ export default {
     },
     onTopChange (val) {
       this.$refs.swiperThumbs.$swiper.slideTo(val.activeIndex)
+    },
+    async getTeams () {
+      await this.$store.dispatch('getTeams')
     },
     async getFixtures () {
       await this.$store.dispatch('getFixtures')
