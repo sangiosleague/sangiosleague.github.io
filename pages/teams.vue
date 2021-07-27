@@ -1,8 +1,8 @@
 <template>
-  <div id="Teams" class="container">
+  <div id="teams" class="container">
     <div v-if="!selectedTeam">
       <h1>Teams</h1>
-      <b-card style="margin-bottom: 1rem;">
+      <b-card no-body style="margin-bottom: 1rem;">
         <b-table
           striped
           hover
@@ -17,7 +17,7 @@
             >
               <b-img
                 class="thmb"
-                :src="`/images/${year}/teams/${data.value}.jpg`"
+                :src="`/resources/${year}/teams/${data.value}.jpg`"
                 alt="thumbnail image"
               />
             </a>
@@ -37,7 +37,7 @@
         </button>
       </div>
       <b-img
-        :src="`/images/${year}/teams/${selectedTeam}.png`"
+        :src="`/resources/${year}/teams/${selectedTeam}.png`"
         fluid
         alt="fuild image"
       />
@@ -120,7 +120,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #teams img.thmb {
   max-width: 170px;
   border-radius: 50%;

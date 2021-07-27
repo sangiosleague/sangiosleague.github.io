@@ -1,29 +1,34 @@
 <template>
   <client-only>
-    <div id="matches" class="container">
-      <div class="fixed-top">
-        <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
-          <swiper-slide
-            v-for="(fixtures, day) in fixturesMap"
-            :key="day"
-          >
-            <span>
-              {{ $moment(day, 'L').format('D MMMM') }}
-            </span>
+    <div>
+      <h1 v-if="!hasMatches">
+        Matches
+      </h1>
+      <div id="matches" class="container">
+        <div class="fixed-top">
+          <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
+            <swiper-slide
+              v-for="(fixtures, day) in fixturesMap"
+              :key="day"
+            >
+              <span>
+                {{ $moment(day, 'L').format('D MMMM') }}
+              </span>
+            </swiper-slide>
+          </swiper>
+        </div>
+        <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
+          <swiper-slide v-for="(fixtures, day) in fixturesMap" :key="day">
+            <div
+              v-for="fixture in fixtures"
+              :key="fixture.id"
+              style="width: 100%"
+            >
+              <Match :fixture="fixture" :only-hour="true" :team-map="teamMap" />
+            </div>
           </swiper-slide>
         </swiper>
       </div>
-      <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
-        <swiper-slide v-for="(fixtures, day) in fixturesMap" :key="day">
-          <div
-            v-for="fixture in fixtures"
-            :key="fixture.id"
-            style="width: 100%"
-          >
-            <Match :fixture="fixture" :only-hour="true" :team-map="teamMap" />
-          </div>
-        </swiper-slide>
-      </swiper>
     </div>
   </client-only>
 </template>
@@ -72,6 +77,9 @@ export default {
         return result
       }, {})
     },
+    hasMatches () {
+      return this.$store.state.fixtures.length > 0
+    },
     teamMap () {
       return this.$store.state.teamMap
     }
@@ -98,11 +106,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main[role="main"]>div:first-child {
+main[role="main"] > div:first-child {
   padding-top: 50px;
-  h1 {
-    background-color: #fff;
-  }
 }
 
 .swiper#swiperThumbs {

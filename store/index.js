@@ -21,10 +21,9 @@ export const mutations = {
   setYear (state, payload) {
     if ((payload.year === '2020' || payload.year === '2021') && state.year !== payload.year) {
       state.year = payload.year
-      state.teams = []
+      state.teamMap = []
       state.selectedTeam = undefined
-      // eslint-disable-next-line no-console
-      // console.log('setYear', state.year)
+      state.fixtures = []
     }
   },
   setTeams (state, payload) {

@@ -11,8 +11,20 @@
       </b-dropdown>
     </header>
 
-    <div v-if="$store.state.year === '2021'" id="daysUntilKickOff" class="text-right m-2" style="color: white">
-      <b>{{ daysUntilKickOff }} days </b> until kick-off
+    <div id="daysUntilKickOff" class="text-right m-2" style="color: white">
+      &nbsp;
+      <span v-if="$store.state.year === '2021'">
+        <b>{{ daysUntilKickOff }} days </b> until kick-off
+      </span>
+    </div>
+
+    <div id="winners">
+      <b-img
+        :src="`/resources/${$store.state.year}/winners.jpg`"
+        fluid
+        alt="winners"
+        style="margin-top: 1.5rem;"
+      />
     </div>
   </div>
 </template>
