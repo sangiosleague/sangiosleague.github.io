@@ -7,6 +7,9 @@ export const state = () => ({
 })
 
 export const getters = {
+  getYear: (state) => {
+    return state.year
+  },
   getFixtures: state => (team) => {
     return state.fixtures.reduce((accumulator, currentValue) => {
       if (currentValue.teams[0].id === team || currentValue.teams[1].id === team) {
