@@ -6,12 +6,12 @@
       :key="group"
       class="card"
     >
+      <h1>{{ group }}</h1>
       <b-table
         striped
         hover
         :items="fixtures"
         responsive="sm"
-        thead-class="d-none"
       />
     </div>
   </div>
@@ -21,15 +21,24 @@
 export default {
   computed: {
     fixturesMap () {
-      return this._.reduce(this.$store.state.fixtures, function (result, value, key) {
-        if (value.group === 'A' || value.group === 'B') {
-          (result[value.group] || (result[value.group] = [])).push(value)
+      const map = { A: {}, B: {} }
+      this.$store.state.fixtures.forEach((fixture) => {
+        if (fixture.group === 'A' || fixture.group === 'B') {
+          if (!map[fixture.group][fixture.teams[0].id]) {
+            map[fixture.group][fixture.teams[0].id] = {
+              name: fixture.teams[0].id,
+              totalGoals: 0
+            }
+          }
+          map[fixture.group][fixture.teams[0].id].totalGoals += fixture.teams[0].goals
         }
-        return result
-      }, {})
+      })
+      // eslint-disable-next-line no-console
+      console.log('mapA', map.A)
+      return { A: Object.values(map.A), B: Object.values(map.B) }
     },
-    teamMap () {
-      return this.$store.state.teamMap
+    map () {
+      return this.$store.state.map
     }
   },
   mounted () {
