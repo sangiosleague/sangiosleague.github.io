@@ -5,7 +5,7 @@
         {{ $moment(fixture.when).format('LLLL') }}
       </span>
       <span v-if="onlyHour">
-        {{ $moment(fixture.when).format('h:mm') }}
+        {{ $moment(fixture.when).format('H:mm') }}
       </span>
     </div>
     <div class="d-flex flex-column">

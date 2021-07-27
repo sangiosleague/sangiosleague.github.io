@@ -106,6 +106,9 @@ main[role="main"]>div:first-child {
 }
 
 .swiper#swiperThumbs {
+
+  margin-top: .75rem;
+
   .swiper-slide {
     width: 25%;
     color: #aaa;
