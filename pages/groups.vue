@@ -39,8 +39,6 @@ export default {
           directs[left] = {}
         }
         directs[left][right] = val
-        // eslint-disable-next-line no-console
-        console.log(directs)
       }
       this.$store.state.fixtures.forEach((fixture) => {
         if (fixture.group === 'A' || fixture.group === 'B') {
