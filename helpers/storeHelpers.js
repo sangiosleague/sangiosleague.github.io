@@ -23,7 +23,5 @@ export const restorePersistedState = (store, cookies, module) => {
     return
   }
 
-  // eslint-disable-next-line no-console
-  console.log('restoreStoreModule', { module, value: persistedState[module] })
   store.commit('restoreStoreModule', { module, value: persistedState[module] })
 }

@@ -1,28 +1,34 @@
 <template>
-  <div class="container">
-    <h1>Groups</h1>
-    <div
-      v-for="(fixtures, group) in fixturesMap"
-      :key="group"
-      class="card"
-      style="margin-bottom:1rem"
-    >
-      <h3 style="margin-left: .5rem">
-        Group {{ group }}
-      </h3>
-      <b-table
-        id="groups"
-        striped
-        hover
-        :items="fixtures"
-        responsive="sm"
-      >
-        <template #cell(team)="data">
-          {{ teamMap[data.item.team].name }}
-        </template>
-      </b-table>
+  <client-only>
+    <div class="container">
+      <h1 v-if="!hasMatches">
+        Groups
+      </h1>
+      <div v-if="hasMatches">
+        <div
+          v-for="(fixtures, group) in fixturesMap"
+          :key="group"
+          class="card"
+          style="margin-bottom:1rem"
+        >
+          <h3 style="margin-left: .5rem">
+            Group {{ group }}
+          </h3>
+          <b-table
+            id="groups"
+            striped
+            hover
+            :items="fixtures"
+            responsive="sm"
+          >
+            <template #cell(team)="data">
+              {{ teamMap[data.item.team].name }}
+            </template>
+          </b-table>
+        </div>
+      </div>
     </div>
-  </div>
+  </client-only>
 </template>
 
 <script>
@@ -30,6 +36,9 @@ export default {
   computed: {
     teamMap () {
       return this.$store.state.teamMap
+    },
+    hasMatches () {
+      return this.$store.state.fixtures.length > 0
     },
     fixturesMap () {
       const map = { A: {}, B: {} }
@@ -108,8 +117,8 @@ export default {
     }
   },
   mounted () {
-    this.getFixtures()
     this.getTeams()
+    this.getFixtures()
   },
   methods: {
     async getTeams () {

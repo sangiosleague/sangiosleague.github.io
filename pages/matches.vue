@@ -106,10 +106,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main[role="main"] > div:first-child {
-  padding-top: 50px;
-}
-
 .swiper#swiperThumbs {
 
   margin-top: .75rem;
@@ -117,16 +113,18 @@ main[role="main"] > div:first-child {
   .swiper-slide {
     width: 25%;
     color: #aaa;
+    background: rgba(127, 127, 127, 0.5) !important;
   }
   .swiper-slide-active {
-    color: #000;
+    color: white;
+    background: rgba(127, 127, 127, 0) !important;
   }
 }
 .swiper {
   height: 100%;
 
   .swiper-slide {
-    background: rgba(234, 234, 234, 0.5);
+    background: rgba(127, 127, 127, 0) !important;
     display: flex !important;
     align-items: center !important;
     flex-direction: column;

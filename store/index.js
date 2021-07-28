@@ -10,6 +10,15 @@ export const getters = {
   getYear: (state) => {
     return state.year
   },
+  getTeams: (state) => {
+    return state.teams
+  },
+  getTeamMap: (state) => {
+    return state.teamMap
+  },
+  getSelectedTeam: (state) => {
+    return state.selectedTeam
+  },
   getFixtures: state => (team) => {
     return state.fixtures.reduce((accumulator, currentValue) => {
       if (currentValue.teams[0].id === team || currentValue.teams[1].id === team) {
@@ -56,10 +65,6 @@ export const mutations = {
 }
 
 export const actions = {
-  getYear ({ commit, state }) {
-    // eslint-disable-next-line no-console
-    console.log(state.year)
-  },
   async getTeams ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/teams.json', { progress: false })
     const teams = res.data
