@@ -18,7 +18,7 @@
       </span>
     </div>
 
-    <div id="winners">
+    <div id="winners" style="text-align: center">
       <b-img
         :src="`/resources/${year}/winners.jpg`"
         fluid

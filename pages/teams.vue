@@ -73,7 +73,6 @@ export default {
   data () {
     return {
       fields: [
-        // A column that needs custom formatting
         'name',
         { key: 'id', label: '' }
       ]
