@@ -5,7 +5,7 @@
       <client-only>
         <b-button class="rounded-circle">
           <template v-if="$auth.$state.loggedIn">
-            <NuxtLink to="/logout">
+            <NuxtLink to="/logout" style="color: white;">
               <b-img
                 :src="$auth.user.picture.data.url"
                 class="mt-1"
@@ -40,6 +40,14 @@ export default {
 </script>
 
 <style scoped>
+a {
+  color: white;
+}
+.btn-secondary {
+    color: #fff;
+    background-color: transparent;
+    border-color: #6c757d;
+}
 .my-right-fixed-top {
   z-index:1040;
   position: fixed;

@@ -130,6 +130,9 @@ export default {
   max-width: 170px;
   border-radius: 50%;
 }
+#teams td {
+  text-align: left !important;
+}
 #teams td:last-child {
   text-align: right !important;
 }
