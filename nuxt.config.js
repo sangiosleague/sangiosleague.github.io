@@ -90,7 +90,19 @@ export default {
     '@nuxt/content',
     // https://auth.nuxtjs.org/guide/setup
     '@nuxtjs/auth-next',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
+    ['nuxt-social-meta',
+      {
+        url: 'https://sangiosleague.it/',
+        title: 'Sangios League',
+        site_name: 'Sangios League Site',
+        description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+        img: 'logo.jpg',
+        img_size: { width: '1076px', height: '1010px' },
+        locale: 'it_IT',
+        theme_color: '#000080'
+      }
+    ]
   ],
 
   auth: {

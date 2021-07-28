@@ -23,6 +23,7 @@
     "ioredis": "^4.27.6",
     "lodash": "^4.17.21",
     "nuxt": "^2.15.7",
+    "nuxt-social-meta": "^1.0.0",
     "sass": "^1.36.0",
     "sass-loader": "^10.1.1",
     "swiper": "^6.8.0",
