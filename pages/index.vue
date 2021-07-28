@@ -22,7 +22,7 @@
       <ul class="list-unstyled flex row">
         <li>
           <a href="https://www.youtube.com/channel/UCsgeUQl2xfuZUCUGQ1D0_dw" target="_youtube" class="text-white">
-            <img src="/resources/svgos/youtube.svg" title="youtube" class="my_icon">
+            <img src="/resources/svgos/youtube.svg" title="youtube" class="my_icon" style="transform: scale(1.5, 1.5)">
           </a>
         </li>
         <li>
