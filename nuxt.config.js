@@ -60,13 +60,8 @@ export default {
     '@nuxtjs/style-resources',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
-    '@nuxtjs/moment',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/moment'
   ],
-
-  googleAnalytics: {
-    id: 'G-ESNK9X6W7N'
-  },
 
   moment: {
     defaultLocale: 'it',
@@ -109,8 +104,14 @@ export default {
         locale: 'it_IT',
         theme_color: '#000080'
       }
-    ]
+    ],
+    '@nuxtjs/gtm'
   ],
+
+  gtm: {
+    enabled: true,
+    id: 'G-ESNK9X6W7N'
+  },
 
   auth: {
     redirect: {
