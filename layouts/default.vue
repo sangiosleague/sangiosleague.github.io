@@ -3,21 +3,21 @@
   <div class="d-flex flex-column vh-100">
     <header class="header my-right-fixed-top text-right text-light p-2">
       <client-only>
-        <b-button class="rounded-circle">
+        <b-button class="rounded-circle square p-2" style="background-color: navy;">
           <template v-if="$auth.$state.loggedIn">
             <NuxtLink to="/logout" style="color: white;">
               <b-img
                 :src="$auth.user.picture.data.url"
                 class="mt-1"
                 rounded="circle"
-                width="30px"
-                height="30px"
+                width="24px"
+                height="20px"
               />
             </NuxtLink>
           </template>
           <template v-else>
             <NuxtLink to="/login">
-              <font-awesome-icon :icon="['fas', 'user']" style="width: 18px; height: 18px;" />
+              <font-awesome-icon :icon="['fas', 'user']" style="width: 24px; height: 20px;" />
             </NuxtLink>
           </template>
         </b-button>
