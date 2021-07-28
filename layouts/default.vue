@@ -3,9 +3,9 @@
   <div class="d-flex flex-column vh-100">
     <header class="header my-right-fixed-top text-right text-light p-2">
       <client-only>
-        <NuxtLink to="/login">
-          <b-button variant="secondary" class="rounded-circle" style="padding: .3rem">
-            <template v-if="$auth.$state.loggedIn">
+        <b-button class="rounded-circle">
+          <template v-if="$auth.$state.loggedIn">
+            <NuxtLink to="/logout">
               <b-img
                 :src="$auth.user.picture.data.url"
                 class="mt-1"
@@ -13,12 +13,14 @@
                 width="30px"
                 height="30px"
               />
-            </template>
-            <template v-else>
+            </NuxtLink>
+          </template>
+          <template v-else>
+            <NuxtLink to="/login">
               <font-awesome-icon :icon="['fas', 'user']" style="width: 18px; height: 18px;" />
-            </template>
-          </b-button>
-        </NuxtLink>
+            </NuxtLink>
+          </template>
+        </b-button>
       </client-only>
     </header>
     <main role="main">
