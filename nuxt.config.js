@@ -88,8 +88,28 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    // https://auth.nuxtjs.org/guide/setup
+    '@nuxtjs/auth-next',
     'cookie-universal-nuxt'
   ],
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/',
+      home: '/'
+    },
+    strategies: {
+      facebook: {
+        endpoints: {
+          userInfo:
+            'https://graph.facebook.com/v6.0/me?fields=id,name,email,picture{url}'
+        },
+        clientId: '104250825478',
+        scope: ['public_profile', 'email']
+      }
+    }
+  },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
@@ -125,7 +145,9 @@ export default {
         'faMinus',
         'faDotCircle',
         'faExternalLinkAlt',
-        'faUser'
+        'faUser',
+        'faExclamationTriangle',
+        'faSignOutAlt'
       ]
     }
   },
