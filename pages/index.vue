@@ -78,7 +78,7 @@ export default {
 
 <style lang="scss" scoped>
 #daysUntilKickOff {
-  font-size:  x-large;
+  font-size:  larger;
   margin-top: 1rem;
 }
 
