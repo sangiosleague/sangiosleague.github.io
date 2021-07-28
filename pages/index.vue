@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div id="daysUntilKickOff" class="text-right m-2 fixed-top" style="color: white">
+    <div id="daysUntilKickOff" class="text-center m-2 fixed-top" style="color: white;">
       &nbsp;
       <span v-if="year === '2021'">
         <b>{{ daysUntilKickOff }} days </b> until kick-off
       </span>
     </div>
 
-    <header class="header fixed-top">
-      <b-dropdown id="dropdown-dropright" dropright :text="year" variant="primary" class="m-2">
+    <header class="header my-left-fixed-top">
+      <b-dropdown id="dropdown-dropright" dropright :text="year" variant="secondary" class="m-2">
         <b-dropdown-item href="#" @click="onSetYear('2020')">
           2020
         </b-dropdown-item>
@@ -88,5 +88,12 @@ export default {
 .my_icon {
   width: 18px;
   height: auto;
+}
+
+.my-left-fixed-top {
+  z-index:1050;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 </style>

@@ -115,7 +115,18 @@ export default {
 
   fontawesome: {
     icons: {
-      solid: ['faHome', 'faList', 'faFlag', 'faFutbol', 'faEllipsisH', 'faArrowLeft', 'faMinus', 'faDotCircle', 'faExternalLinkAlt']
+      solid: [
+        'faHome',
+        'faList',
+        'faFlag',
+        'faFutbol',
+        'faEllipsisH',
+        'faArrowLeft',
+        'faMinus',
+        'faDotCircle',
+        'faExternalLinkAlt',
+        'faUser'
+      ]
     }
   },
 
