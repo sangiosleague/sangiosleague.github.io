@@ -43,11 +43,6 @@ export default {
 a {
   color: white;
 }
-.btn-secondary {
-    color: #fff;
-    background-color: transparent;
-    border-color: #6c757d;
-}
 
 .my-right-fixed-top {
   z-index: 1040;
