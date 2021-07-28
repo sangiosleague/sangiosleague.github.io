@@ -8,16 +8,14 @@
             <NuxtLink to="/logout" style="color: white;">
               <b-img
                 :src="$auth.user.picture.data.url"
-                class="mt-1"
-                rounded="circle"
-                width="24px"
-                height="20px"
+                width="40px"
+                height="auto"
               />
             </NuxtLink>
           </template>
           <template v-else>
             <NuxtLink to="/login">
-              <font-awesome-icon :icon="['fas', 'user']" style="width: 24px; height: 20px;" />
+              <font-awesome-icon :icon="['fas', 'user']" style="width: 20px; height: 20px;" />
             </NuxtLink>
           </template>
         </b-button>
