@@ -105,7 +105,7 @@ export default {
           userInfo:
             'https://graph.facebook.com/v6.0/me?fields=id,name,email,picture{url}'
         },
-        clientId: '104250825478',
+        clientId: '1921460184702496',
         scope: ['public_profile', 'email']
       }
     }
