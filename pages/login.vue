@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="backButton" style="background-color:rgba(64,224,208,.2);height:100%;" @click="backOnEscape">
     <!-- b-alert v-if="errorMessage" show variant="danger">
       {{ errorMessage }}
     </!-->
@@ -51,7 +51,28 @@ export default {
       { key: 'facebook', name: 'Facebook', color: '#3c65c4', active: true }
     ]
   },
-  methods: {}
+  beforeDestroy () {
+    // eslint-disable-next-line no-console
+    console.log('beforeDestroy')
+    window.removeEventListener('keydown', this.backOnEscape)
+  },
+  mounted () {
+    // eslint-disable-next-line no-console
+    console.log('mounted')
+    window.addEventListener('keydown', this.backOnEscape)
+  },
+  methods: {
+    backOnEscape (e) {
+      // eslint-disable-next-line no-console
+      console.log(e.key, e.repeat, e.srcElement.id)
+      if ((e.srcElement && e.srcElement.id === 'backButton') || e.key === 'Escape') {
+        // eslint-disable-next-line no-console
+        console.log(e.key, e.repeat, e.srcElement)
+        window.removeEventListener('keydown', this.backOnEscape)
+        this.$router.back()
+      }
+    }
+  }
 }
 </script>
 

@@ -101,15 +101,19 @@ export default {
   mounted () {
     this.getTeams()
     this.getFixtures()
-    window.addEventListener('keydown', (e) => {
+    window.addEventListener('keydown', this.unselectYearOnEscape)
+  },
+  destroyed () {
+    window.removeEventListener('keypress', this.unselectYearOnEscape)
+  },
+  methods: {
+    unselectYearOnEscape (e) {
       if (e.key === 'Escape' && this.selectedTeam !== undefined) {
         this.$store.commit('selectTeam', {
           team: undefined
         })
       }
-    })
-  },
-  methods: {
+    },
     selectTeam (team) {
       this.$store.commit('selectTeam', {
         team
