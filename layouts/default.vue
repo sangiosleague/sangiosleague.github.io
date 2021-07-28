@@ -1,9 +1,9 @@
 <!-- https://merrymaker.github.io/bs4-holygrail-layout/ -->
 <template>
   <div class="d-flex flex-column vh-100">
-    <header class="header my-right-fixed-top text-right text-light p-2">
+    <header class="header my-right-fixed-top text-right text-light">
       <client-only>
-        <b-button class="rounded-circle square p-2" style="background-color: navy;">
+        <b-button class="" style="background-color: navy;">
           <template v-if="$auth.$state.loggedIn">
             <NuxtLink to="/logout" style="color: white;">
               <b-img
@@ -48,10 +48,11 @@ a {
     background-color: transparent;
     border-color: #6c757d;
 }
+
 .my-right-fixed-top {
-  z-index:1040;
+  z-index: 1040;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: -1px;
+  right: -1px;
 }
 </style>
