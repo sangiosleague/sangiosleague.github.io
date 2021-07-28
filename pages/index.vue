@@ -18,24 +18,21 @@
       </b-dropdown>
     </header>
 
-    <div>
-      <ul class="list-unstyled" style="text-align: right; font-size: smaller; margin-bottom: .25rem;">
+    <div id="social">
+      <ul class="list-unstyled flex row">
         <li>
-          <a href="https://www.facebook.com/events/534655621392000/" target="_facebook" class="text-white">
-            facebook
-            <img src="/resources/svgos/facebook.svg" title="facebook" class="my_icon">
+          <a href="https://www.youtube.com/channel/UCsgeUQl2xfuZUCUGQ1D0_dw" target="_youtube" class="text-white">
+            <img src="/resources/svgos/youtube.svg" title="youtube" class="my_icon">
           </a>
         </li>
         <li>
           <a href="https://www.instagram.com/sangiosleague/" target="_instagram" class="text-white">
-            instagram
             <img src="/resources/svgos/instagram.svg" title="instagram" class="my_icon">
           </a>
         </li>
         <li>
-          <a href="https://www.youtube.com/channel/UCsgeUQl2xfuZUCUGQ1D0_dw" target="_youtube" class="text-white">
-            youtube
-            <img src="/resources/svgos/youtube.svg" title="youtube" class="my_icon">
+          <a href="https://www.facebook.com/events/534655621392000/" target="_facebook" class="text-white">
+            <img src="/resources/svgos/facebook.svg" title="facebook" class="my_icon">
           </a>
         </li>
       </ul>
@@ -86,7 +83,7 @@ export default {
 }
 
 .my_icon {
-  width: 18px;
+  width: 24px;
   height: auto;
 }
 
@@ -96,4 +93,17 @@ export default {
   top: 0;
   left: 0;
 }
+
+#social {
+  ul {
+    margin-bottom: .5rem;
+  }
+  li {
+    margin: .25rem 0 0 .75rem;
+    border: 1px #6c757d solid;
+    border-radius: 50%;
+    padding: .5rem;
+  }
+}
+
 </style>
