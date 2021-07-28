@@ -3,19 +3,19 @@
   <div class="d-flex flex-column vh-100">
     <header class="header my-right-fixed-top text-right text-light">
       <client-only>
-        <b-button class="" style="background-color: navy;">
+        <b-button class="" style="background-color: navy; padding: 0;">
           <template v-if="$auth.$state.loggedIn">
             <NuxtLink to="/logout" style="color: white;">
               <b-img
                 :src="$auth.user.picture.data.url"
-                width="40px"
+                width="36px"
                 height="auto"
               />
             </NuxtLink>
           </template>
           <template v-else>
             <NuxtLink to="/login">
-              <font-awesome-icon :icon="['fas', 'user']" style="width: 20px; height: 20px;" />
+              <font-awesome-icon :icon="['fas', 'user']" style="width: 36px; height: 36px; transform: scale(.666, .666);" />
             </NuxtLink>
           </template>
         </b-button>
