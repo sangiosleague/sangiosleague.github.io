@@ -1,10 +1,10 @@
 <template>
   <client-only>
-    <div>
+    <div class="container">
       <h1 v-if="!hasMatches">
         Matches
       </h1>
-      <div id="matches" class="container">
+      <div id="matches">
         <div class="fixed-top">
           <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
             <swiper-slide

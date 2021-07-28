@@ -18,12 +18,33 @@
       </b-dropdown>
     </header>
 
+    <div>
+      <ul class="list-unstyled" style="text-align: right; font-size: smaller; margin-bottom: .25rem;">
+        <li>
+          <a href="https://www.facebook.com/events/534655621392000/" target="_facebook" class="text-white">
+            facebook
+            <img src="/resources/svgos/facebook.svg" title="facebook" class="my_icon">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/sangiosleague/" target="_instagram" class="text-white">
+            instagram
+            <img src="/resources/svgos/instagram.svg" title="instagram" class="my_icon">
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/channel/UCsgeUQl2xfuZUCUGQ1D0_dw" target="_youtube" class="text-white">
+            youtube
+            <img src="/resources/svgos/youtube.svg" title="youtube" class="my_icon">
+          </a>
+        </li>
+      </ul>
+    </div>
     <div id="winners" style="text-align: center">
       <b-img
         :src="announcement"
         fluid
         alt="winners"
-        style="margin-top: 1.5rem;"
       />
     </div>
   </div>
@@ -62,5 +83,10 @@ export default {
 #daysUntilKickOff {
   font-size:  x-large;
   margin-top: 1rem;
+}
+
+.my_icon {
+  width: 18px;
+  height: auto;
 }
 </style>

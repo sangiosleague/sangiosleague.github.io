@@ -5,7 +5,7 @@
         Teams
       </h1>
       <div v-if="hasTeams">
-        <div id="teams">
+        <div id="teams" class="text-center">
           <div v-if="!selectedTeam">
             <b-card no-body style="margin-bottom: 1rem;">
               <b-table
