@@ -60,8 +60,13 @@ export default {
     '@nuxtjs/style-resources',
     // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
-    '@nuxtjs/moment'
+    '@nuxtjs/moment',
+    '@nuxtjs/google-analytics'
   ],
+
+  googleAnalytics: {
+    id: 'G-ESNK9X6W7N'
+  },
 
   moment: {
     defaultLocale: 'it',
