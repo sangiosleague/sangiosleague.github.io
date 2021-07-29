@@ -68,6 +68,9 @@ export default {
 
   --color-v: transparent;
   --color: transparent;
+
+  height: min-content;
+  min-height: 100vh;
 }
 
 .my-right-fixed-top {
