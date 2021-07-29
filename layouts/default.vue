@@ -39,10 +39,8 @@ export default {
   computed: {
     cssVars () {
       return {
-        '--color-v': this.theYear === '2021' ? 'transparent' : 'black',
-        '--color': this.theYear === '2021' ? 'transparent' : 'black',
-        '--blend-top': this.theYear === '2021' ? 'normal' : 'overlay',
-        '--blend-bottom': this.theYear === '2021' ? 'normal' : 'normal'
+        '--background-blend-mode': this.theYear === '2021' ? 'normal' : 'color',
+        '--color': this.theYear === '2021' ? 'transparent' : 'gray'
       }
     },
     ...mapGetters({
@@ -56,19 +54,11 @@ export default {
 /* https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component */
 /* https://css-tricks.com/apply-a-filter-to-a-background-image/ */
 #theBackground {
-  background:
-    linear-gradient(to right, var(--color), var(--color)),
-    url(https://sangiosleague.it/top-image.jpg);
+  z-index:0;
+  background: linear-gradient(to right, var(--color), var(--color)), url(https://sangiosleague.it/top-image.jpg);
   background-position: center center;
   background-size: cover;
-  background-blend-mode:
-    var(--blend-top, normal),
-    var(--blend-bottom, normal),
-    normal;
-  filter: gray;
-
-  --color-v: transparent;
-  --color: transparent;
+  background-blend-mode: var(--background-blend-mode);
 
   height: min-content;
   min-height: calc(100vh - #{$footerHeight});

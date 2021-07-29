@@ -39,13 +39,15 @@
         </li>
       </ul>
     </div>
-    <div id="winners" style="text-align: center">
-      <b-img
-        :src="announcement"
-        fluid
-        alt="winners"
-      />
-    </div>
+    <span v-if="is2021">
+      <div id="winners" style="text-align: center">
+        <b-img
+          :src="announcement"
+          fluid
+          alt="announcement"
+        />
+      </div>
+    </span>
   </div>
 </template>
 
