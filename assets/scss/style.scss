@@ -4,16 +4,6 @@ body {
   height: calc(var(--vh, 1vh) * 100);
   overflow-x: hidden; /* https://stackoverflow.com/a/52019093  */
 }
-/*
-body {
-  display: flex;
-  flex-direction: column;
-  background: no-repeat center center fixed;
-  background-image: linear-gradient(black, white) url(/top-image.jpg);
-  background-size: cover;
-  background-blend-mode: saturation;
-}
-*/
 
 h1 {
   text-align: center;
@@ -37,6 +27,8 @@ main[role="main"] {
 
 main[role="main"] > div:first-child {
   padding-top: 50px;
+  height: min-content;
+  min-height: 100vh;  
 }
 
 main[role="main"] .container {

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <h1 v-if="$store.state.year !== '2020'">
       <font-awesome-icon :icon="['fas', 'ellipsis-h']" />
     </h1>
