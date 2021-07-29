@@ -3,10 +3,6 @@ export default function ({ $auth }) {
     return
   }
 
-  const username = $auth.user.username
   // eslint-disable-next-line no-console
-  console.log(username)
-  const email = $auth.user.email
-  // eslint-disable-next-line no-console
-  console.log(email)
+  console.log($auth.user)
 }
