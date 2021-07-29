@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div id="daysUntilKickOff" class="text-center m-2 fixed-top" style="color: white;">
-      &nbsp;
-      <span v-if="year === '2021'">
+      <span v-if="!is2021">
+        &nbsp;
+      </span>
+      <span v-if="is2021">
         <b>{{ daysUntilKickOff }} days </b> until kick-off
       </span>
     </div>
@@ -52,6 +54,9 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
+    is2021 () {
+      return this.year === '2021'
+    },
     daysUntilKickOff () {
       const start = this.$moment('2021-08-07')
       const now = this.$moment()
