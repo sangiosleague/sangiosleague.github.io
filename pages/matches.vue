@@ -1,36 +1,34 @@
 <template>
-  <client-only>
-    <div class="container">
-      <h1 v-if="!hasMatches">
-        Matches
-      </h1>
-      <div id="matches">
-        <div class="fixed-top">
-          <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
-            <swiper-slide
-              v-for="(fixtures, day) in fixturesMap"
-              :key="day"
-            >
-              <span>
-                {{ $moment(day, 'L').format('D MMMM') }}
-              </span>
-            </swiper-slide>
-          </swiper>
-        </div>
-        <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
-          <swiper-slide v-for="(fixtures, day) in fixturesMap" :key="day">
-            <div
-              v-for="fixture in fixtures"
-              :key="fixture.id"
-              style="width: 100%"
-            >
-              <Match :fixture="fixture" :only-hour="true" :team-map="teamMap" />
-            </div>
+  <div class="container">
+    <h1 v-if="!hasMatches">
+      Matches
+    </h1>
+    <div id="matches">
+      <div class="fixed-top">
+        <swiper id="swiperThumbs" ref="swiperThumbs" class="swiper gallery-thumbs" :options="swiperOptionThumbs" @slideChange="onThumbnailChange">
+          <swiper-slide
+            v-for="(fixtures, day) in fixturesMap"
+            :key="day"
+          >
+            <span>
+              {{ $moment(day, 'L').format('D MMMM') }}
+            </span>
           </swiper-slide>
         </swiper>
       </div>
+      <swiper id="swiperTop" ref="swiperTop" class="swiper gallery-top" :options="swiperOption" @slideChange="onTopChange">
+        <swiper-slide v-for="(fixtures, day) in fixturesMap" :key="day">
+          <div
+            v-for="fixture in fixtures"
+            :key="fixture.id"
+            style="width: 100%"
+          >
+            <Match :fixture="fixture" :only-hour="true" :team-map="teamMap" />
+          </div>
+        </swiper-slide>
+      </swiper>
     </div>
-  </client-only>
+  </div>
 </template>
 
 <script>

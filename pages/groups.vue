@@ -1,34 +1,32 @@
 <template>
-  <client-only>
-    <div class="container">
-      <h1 v-if="!hasMatches">
-        Groups
-      </h1>
-      <div v-if="hasMatches">
-        <div
-          v-for="(fixtures, group) in fixturesMap"
-          :key="group"
-          class="card"
-          style="margin-bottom:1rem"
+  <div class="container">
+    <h1 v-if="!hasMatches">
+      Groups
+    </h1>
+    <div v-if="hasMatches">
+      <div
+        v-for="(fixtures, group) in fixturesMap"
+        :key="group"
+        class="card"
+        style="margin-bottom:1rem"
+      >
+        <h3 style="margin-left: .5rem">
+          Group {{ group }}
+        </h3>
+        <b-table
+          id="groups"
+          striped
+          hover
+          :items="fixtures"
+          responsive="sm"
         >
-          <h3 style="margin-left: .5rem">
-            Group {{ group }}
-          </h3>
-          <b-table
-            id="groups"
-            striped
-            hover
-            :items="fixtures"
-            responsive="sm"
-          >
-            <template #cell(team)="data">
-              {{ teamMap[data.item.team].name }}
-            </template>
-          </b-table>
-        </div>
+          <template #cell(team)="data">
+            {{ teamMap[data.item.team].name }}
+          </template>
+        </b-table>
       </div>
     </div>
-  </client-only>
+  </div>
 </template>
 
 <script>

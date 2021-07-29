@@ -1,8 +1,8 @@
 <!-- https://merrymaker.github.io/bs4-holygrail-layout/ -->
 <template>
-  <div id="theBackground" :style="cssVars" class="d-flex flex-column">
-    <header class="header my-right-fixed-top text-right text-light">
-      <client-only>
+  <client-only>
+    <div id="theBackground" :style="cssVars" class="d-flex flex-column">
+      <header class="header my-right-fixed-top text-right text-light">
         <b-button style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
           <template v-if="$auth.$state.loggedIn">
             <NuxtLink to="/logout" style="color: white;">
@@ -21,15 +21,15 @@
             </NuxtLink>
           </template>
         </b-button>
-      </client-only>
-    </header>
-    <main role="main">
-      <Nuxt />
-    </main>
-    <footer class="footer fixed-bottom">
-      <Navbar />
-    </footer>
-  </div>
+      </header>
+      <main role="main">
+        <Nuxt />
+      </main>
+      <footer class="footer fixed-bottom">
+        <Navbar />
+      </footer>
+    </div>
+  </client-only>
 </template>
 
 <script>
