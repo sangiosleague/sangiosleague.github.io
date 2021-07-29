@@ -104,14 +104,8 @@ export default {
         locale: 'it_IT',
         theme_color: '#000080'
       }
-    ],
-    '@nuxtjs/gtm'
+    ]
   ],
-
-  gtm: {
-    enabled: true,
-    id: 'G-ESNK9X6W7N'
-  },
 
   auth: {
     redirect: {
@@ -119,6 +113,7 @@ export default {
       logout: '/',
       home: '/'
     },
+    plugins: ['~/plugins/auth.js'],
     strategies: {
       facebook: {
         endpoints: {
