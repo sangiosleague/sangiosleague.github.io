@@ -1,6 +1,6 @@
 <!-- https://merrymaker.github.io/bs4-holygrail-layout/ -->
 <template>
-  <div id="theBackground" :style="cssVars" class="d-flex flex-column vh-100">
+  <div id="theBackground" :style="cssVars" class="d-flex flex-column">
     <header class="header my-right-fixed-top text-right text-light">
       <client-only>
         <b-button style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
