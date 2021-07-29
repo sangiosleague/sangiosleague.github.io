@@ -52,7 +52,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" >
 /* https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component */
 /* https://css-tricks.com/apply-a-filter-to-a-background-image/ */
 #theBackground {
@@ -65,12 +65,13 @@ export default {
     var(--blend-top, normal),
     var(--blend-bottom, normal),
     normal;
+  filter: gray;
 
   --color-v: transparent;
   --color: transparent;
 
   height: min-content;
-  min-height: 100vh;
+  min-height: calc(100vh - #{$footerHeight});
 }
 
 .my-right-fixed-top {

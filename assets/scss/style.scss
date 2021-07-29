@@ -20,15 +20,16 @@ h1 {
 
 /* main */
 main[role="main"] {
-  padding-bottom: 50px;
+  padding-bottom: $footerHeight;
   flex-grow: 1 !important;
   width: 100%;
 }
 
 main[role="main"] > div:first-child {
-  padding-top: 50px;
+  padding-top: $headerHeight;
   height: min-content;
-  min-height: 100vh;  
+  /* Interpolate: https://stackoverflow.com/a/20236515/1070215 */
+  min-height: calc(100vh - (#{$footerHeight} + #{$headerHeight})); 
 }
 
 main[role="main"] .container {
