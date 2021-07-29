@@ -40,7 +40,7 @@
       </ul>
     </div>
     <span v-if="is2021">
-      <div id="winners" style="text-align: center">
+      <div id="winners" style="text-align: center; margin-bottom: 1rem;">
         <b-img
           :src="announcement"
           fluid

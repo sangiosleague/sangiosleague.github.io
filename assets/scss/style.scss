@@ -29,7 +29,7 @@ main[role="main"] > div:first-child {
   padding-top: $headerHeight;
   height: min-content;
   /* Interpolate: https://stackoverflow.com/a/20236515/1070215 */
-  min-height: calc(100vh - (#{$footerHeight} + #{$headerHeight})); 
+  min-height: calc(100vh - #{$footerHeight}); 
 }
 
 main[role="main"] .container {
