@@ -104,6 +104,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#matches {
+  height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
+}
+
 .swiper#swiperThumbs {
 
   margin-top: .75rem;
@@ -128,8 +132,11 @@ export default {
     flex-direction: column;
     flex-wrap: nowrap;
     overflow: scroll;
-    max-height: calc(100vh - 101px); /* fallback */
-    max-height: calc((var(--vh, 1vh) * 100) - 101px);
+    max-height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
+    /*
+    height: min-content;
+    min-height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
+    */
 
     div:first-child > .card {
       margin: 1rem;
