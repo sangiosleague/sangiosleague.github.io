@@ -1,6 +1,6 @@
 <!-- https://merrymaker.github.io/bs4-holygrail-layout/ -->
 <template>
-  <div class="d-flex flex-column vh-100">
+  <div id="theBackground" :style="cssVars" class="d-flex flex-column vh-100">
     <header class="header my-right-fixed-top text-right text-light">
       <client-only>
         <b-button style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
@@ -33,15 +33,41 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  methods: {
+  computed: {
+    cssVars () {
+      return {
+        '--color-v': this.theYear === '2021' ? 'transparent' : 'black',
+        '--color': this.theYear === '2021' ? 'transparent' : 'black',
+        '--blend-top': this.theYear === '2021' ? 'normal' : 'overlay',
+        '--blend-bottom': this.theYear === '2021' ? 'normal' : 'normal'
+      }
+    },
+    ...mapGetters({
+      theYear: 'getYear'
+    })
   }
 }
 </script>
 
-<style scoped>
-a {
-  color: white;
+<style>
+/* https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component */
+/* https://css-tricks.com/apply-a-filter-to-a-background-image/ */
+#theBackground {
+  background:
+    linear-gradient(to right, var(--color), var(--color)),
+    url(https://sangiosleague.it/top-image.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-blend-mode:
+    var(--blend-top, normal),
+    var(--blend-bottom, normal),
+    normal;
+
+  --color-v: transparent;
+  --color: transparent;
 }
 
 .my-right-fixed-top {
