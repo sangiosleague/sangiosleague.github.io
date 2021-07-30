@@ -20,16 +20,13 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'SangioS League',
+    title: 'Sangios League',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto' },
       { name: 'format-detection', content: 'telephone=no' }
-    ] /*,
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ] */
+    ]
   },
 
   loading: {
@@ -58,7 +55,6 @@ export default {
     '@nuxtjs/fontawesome',
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
-    // https://github.com/nuxt-community/svg-module
     '@nuxtjs/svg',
     '@nuxtjs/moment'
   ],
@@ -131,8 +127,8 @@ export default {
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
-      name: 'SangioS League',
-      short_name: 'SangioS League',
+      name: 'Sangios League',
+      short_name: 'Sangios League',
       description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
       lang: 'it'
     },
@@ -141,12 +137,11 @@ export default {
     },
     meta: {
       /* meta options */
-      name: 'SangioS League',
+      name: 'Sangios League',
       description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
       author: 'Christophe Thiebaud',
       theme_color: '#000080',
       lang: 'it'
-
     }
   },
 
@@ -174,10 +169,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    extend (config, { isClient }) {
+    extend (config, ctx) {
       // Extend only webpack config for client-bundle
-      if (isClient) {
-        config.devtool = 'source-map'
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
       }
     },
     babel: {
