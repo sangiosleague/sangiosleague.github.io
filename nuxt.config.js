@@ -148,6 +148,9 @@ export default {
 
   fontawesome: {
     icons: {
+      brands: [
+        'faGithub'
+      ],
       solid: [
         'faHome',
         'faList',
