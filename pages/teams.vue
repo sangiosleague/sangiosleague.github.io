@@ -135,7 +135,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #teams img.thmb {
   max-width: 170px;
   border-radius: 50%;
@@ -146,7 +146,6 @@ export default {
 #teams td:last-child {
   text-align: right !important;
 }
-
 .noPad {
   padding-top: 0 !important;
 }
