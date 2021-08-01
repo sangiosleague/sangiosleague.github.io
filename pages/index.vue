@@ -41,9 +41,9 @@
     </div>
     <span v-if="is2021">
       <div id="winners" style="text-align: center; margin-bottom: 1rem;">
-        <b-img
+        <nuxt-img
+          class="img-fluid"
           :src="announcement"
-          fluid
           alt="announcement"
         />
       </div>

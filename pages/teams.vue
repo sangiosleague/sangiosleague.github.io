@@ -1,10 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container" :class="{'noPad': selectedTeam}">
     <h1 v-if="!hasTeams">
       Teams
     </h1>
     <div v-if="hasTeams">
       <div id="teams" class="text-center">
+        >
         <div v-if="!selectedTeam">
           <b-card no-body style="margin-bottom: 1rem;">
             <b-table
@@ -14,17 +15,14 @@
               :items="teams"
               responsive="sm"
               thead-class="d-none"
+              @row-clicked="(item, index, event) => rowClickHandler(item, index, event)"
             >
               <template #cell(id)="data">
-                <a
-                  @click="selectTeam(data.value)"
-                >
-                  <b-img
-                    class="thmb"
-                    :src="`/resources/${year}/teams/${data.value}.jpg`"
-                    alt="thumbnail image"
-                  />
-                </a>
+                <nuxt-img
+                  class="thmb img-fluid"
+                  :src="`/resources/${year}/teams/${data.value}.jpg`"
+                  alt="thumbnail image"
+                />
               </template>
             </b-table>
           </b-card>
@@ -40,9 +38,9 @@
               <font-awesome-icon :icon="['fas', 'arrow-left']" />
             </button>
           </div>
-          <b-img
+          <nuxt-img
+            class="img-fluid"
             :src="`/resources/${year}/teams/${selectedTeam}.png`"
-            fluid
             alt="fuild image"
           />
           <b-card no-body style="margin-bottom: 1rem;">
@@ -87,7 +85,7 @@ export default {
   },
   computed: {
     hasTeams () {
-      return this.$store.state.teams.length > 0
+      return this.teams.length > 0
     },
     ...mapGetters({
       teams: 'getTeams',
@@ -99,13 +97,23 @@ export default {
   mounted () {
     this.getTeams()
     this.getFixtures()
-    window.addEventListener('keydown', this.unselectYearOnEscape)
+    window.addEventListener('keydown', this.unselectTeamOnEscape)
   },
   destroyed () {
-    window.removeEventListener('keypress', this.unselectYearOnEscape)
+    window.removeEventListener('keypress', this.unselectTeamOnEscape)
   },
   methods: {
-    unselectYearOnEscape (e) {
+    hasSelectedTeam () {
+      // eslint-disable-next-line no-console
+      console.log('selectedTeam', this.$store.state.selectTeam)
+      return typeof this.selectedTeam !== 'undefined'
+    },
+    rowClickHandler (item, index, event) {
+      // eslint-disable-next-line no-console
+      console.log('item', item, 'index', index, 'event', event)
+      this.selectTeam(item.id)
+    },
+    unselectTeamOnEscape (e) {
       if (e.key === 'Escape' && this.selectedTeam !== undefined) {
         this.$store.commit('selectTeam', {
           team: undefined
@@ -127,7 +135,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #teams img.thmb {
   max-width: 170px;
   border-radius: 50%;
@@ -137,5 +145,9 @@ export default {
 }
 #teams td:last-child {
   text-align: right !important;
+}
+
+.noPad {
+  padding-top: 0 !important;
 }
 </style>

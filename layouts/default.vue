@@ -12,7 +12,7 @@
         <b-button style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
           <template v-if="$auth.$state.loggedIn">
             <NuxtLink to="/logout" style="color: white;">
-              <b-img
+              <nuxt-img
                 :src="$auth.user.picture.data.url"
                 style="width: 36px; height: 36px;"
               />
