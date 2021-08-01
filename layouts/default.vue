@@ -51,15 +51,15 @@ export default {
 </script>
 
 <style lang="scss" >
-/* https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component */
-/* https://css-tricks.com/apply-a-filter-to-a-background-image/ */
+
+/* https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
+   https://css-tricks.com/apply-a-filter-to-a-background-image/ */
 #theBackground {
   z-index:0;
   background: linear-gradient(to right, var(--color), var(--color)), url(https://sangiosleague.it/top-image.jpg);
   background-position: center center;
   background-size: cover;
   background-blend-mode: var(--background-blend-mode);
-
   height: min-content;
   min-height: calc(100vh - #{$footerHeight});
 }

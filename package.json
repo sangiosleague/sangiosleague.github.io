@@ -39,9 +39,14 @@
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/moment": "^1.6.1",
     "@nuxtjs/style-resources": "^1.2.0",
+    "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/svg": "^0.1.12",
     "eslint": "^7.29.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1"
+    "eslint-plugin-vue": "^7.12.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-scss": "^3.20.1"
   }
 }

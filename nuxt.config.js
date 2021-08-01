@@ -54,6 +54,7 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/fontawesome',
     '@nuxtjs/eslint-module',
+    '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
     '@nuxtjs/svg',
     '@nuxtjs/moment'

@@ -28,6 +28,7 @@ main[role="main"] {
 main[role="main"] > div:first-child {
   padding-top: $headerHeight;
   height: min-content;
+  
   /* Interpolate: https://stackoverflow.com/a/20236515/1070215 */
   min-height: calc(100vh - #{$footerHeight}); 
 }
@@ -42,6 +43,7 @@ main[role="main"] .container {
   z-index: 999;
   background: linear-gradient(0deg, rgb(255, 255, 255), $footGradient 100%);
 }
+
 /* kitchen-sink */
 ul,
 li {

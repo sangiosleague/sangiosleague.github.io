@@ -108,20 +108,6 @@ export default {
   height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
 }
 
-.swiper#swiperThumbs {
-
-  margin-top: .75rem;
-
-  .swiper-slide {
-    width: 25%;
-    color: #aaa;
-    background: rgba(127, 127, 127, 0.5) !important;
-  }
-  .swiper-slide-active {
-    color: white;
-    background: rgba(127, 127, 127, 0) !important;
-  }
-}
 .swiper {
   height: 100%;
 
@@ -133,17 +119,27 @@ export default {
     flex-wrap: nowrap;
     overflow: scroll;
     max-height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
-    /*
-    height: min-content;
-    min-height: calc(100vh - (#{$footerHeight} + #{$headerHeight}));
-    */
 
-    div:first-child > .card {
-      margin: 1rem;
-    }
     div > .card {
       margin: 0 1rem 1rem 1rem;
     }
+    div:first-child > .card {
+      margin: 1rem;
+    }
+  }
+}
+
+.swiper#swiperThumbs {
+  margin-top: .75rem;
+
+  .swiper-slide {
+    width: 25%;
+    color: darkgray;
+    background: rgba(127, 127, 127, 0.5) !important;
+  }
+  .swiper-slide-active {
+    color: white;
+    background: rgba(127, 127, 127, 0) !important;
   }
 }
 </style>
