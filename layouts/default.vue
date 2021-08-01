@@ -3,7 +3,7 @@
   <client-only>
     <div id="theBackground" :style="cssVars" class="d-flex flex-column">
       <header class="header my-right-fixed-top text-right text-light">
-        <b-button v-if="$auth.$state.loggedIn && $auth.user==='christophe.thiebaud@alumni.insead.edu'" :href="gitUrl" target="_github" style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
+        <b-button v-if="$auth.$state.loggedIn && $auth.user.email==='christophe.thiebaud@alumni.insead.edu'" :href="gitUrl" target="_github" style="background-color: navy; padding: 0; margin:0; max-height: 36px; max-width: 36px;">
           <font-awesome-icon
             :icon="['fab', 'github']"
             style="width: 36px; height: 36px; transform: scale(.666, .666);"
