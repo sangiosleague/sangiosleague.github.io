@@ -173,6 +173,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extractCSS: true,
     extend (config, ctx) {
       // Extend only webpack config for client-bundle
       if (ctx.isDev) {
@@ -180,7 +181,10 @@ export default {
       }
     },
     babel: {
-      compact: true
+      compact: true,
+      plugins: [
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }]
+      ]
     }
   },
 
