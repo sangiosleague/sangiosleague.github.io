@@ -21,7 +21,7 @@
     "bootstrap-vue": "^2.21.2",
     "cookie-universal-nuxt": "^2.1.5",
     "core-js": "^3.16.0",
-    "ioredis": "^4.27.6",
+    "ioredis": "^4.27.7",
     "lodash": "^4.17.21",
     "nuxt": "^2.15.7",
     "nuxt-social-meta": "^1.0.0",
