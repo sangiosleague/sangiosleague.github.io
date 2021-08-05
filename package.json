@@ -27,7 +27,7 @@
     "nuxt-social-meta": "^1.0.0",
     "sass": "^1.37.5",
     "sass-loader": "^10.1.1",
-    "swiper": "^6.8.0",
+    "swiper": "^6.8.1",
     "vue-awesome-swiper": "^4.1.1",
     "vue-lodash": "^2.1.2"
   },
