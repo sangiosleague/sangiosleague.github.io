@@ -149,21 +149,23 @@ export default {
   fontawesome: {
     icons: {
       brands: [
+        'faFacebook',
         'faGithub'
       ],
       solid: [
-        'faHome',
-        'faList',
+        'faArrowLeft',
+        'faDotCircle',
+        'faEllipsisH',
+        'faExclamationTriangle',
+        'faExternalLinkAlt',
         'faFlag',
         'faFutbol',
-        'faEllipsisH',
-        'faArrowLeft',
+        'faHome',
+        'faList',
         'faMinus',
-        'faDotCircle',
-        'faExternalLinkAlt',
+        'faSignOutAlt',
         'faUser',
-        'faExclamationTriangle',
-        'faSignOutAlt'
+        'faUserSecret'
       ]
     }
   },

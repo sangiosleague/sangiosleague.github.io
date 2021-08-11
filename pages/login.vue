@@ -1,5 +1,5 @@
 <template>
-  <div id="backButton" style="background-color:rgba(64,224,208,.2);height:100%;" @click="backOnEscape">
+  <div id="backButton" class="container" @click="backOnEscape">
     <!-- b-alert v-if="errorMessage" show variant="danger">
       {{ errorMessage }}
     </!-->
@@ -8,31 +8,33 @@
       <strong>{{ $auth.$state.redirect }}</strong>
     </b-alert>
     <b-row align-h="center" class="pt-4">
-      <b-card v-show="!loggedIn" title="Login" bg-variant="light">
-        <!-- div class="alert alert-warning">
-          <font-awesome-icon :icon="['fas', 'exclamation-triangle']" />
-          {{ "loginWarning" }}
-        </!-->
+      <b-card v-show="!loggedIn" title="Login" bg-variant="light" style="max-width: fit-content; margin-bottom: 0.75rem;" block>
         <div v-for="s in strategies" :key="s.key" class="mb-2" style="width:100%">
           <b-btn
-            block
             :style="{ background: s.color }"
             class="login-button"
-            :disabled="!s.active"
-            @click="$auth.loginWith(s.key)"
+            :disabled="!s.active || loading"
+            @click="loading=true && $auth.loginWith(s.key)"
           >
+            <span v-if="s.faIcon" style="margin-right: 0.5rem;">
+              <font-awesome-icon :icon="['fab', s.faIcon]" />
+            </span>
             {{ s.name }}
+            <font-awesome-icon v-if="!loading" :icon="['fas', 'sign-out-alt']" style="margin-left: 0.75rem" />
+            <font-awesome-icon v-if="loading" :icon="['fas', 'spinner']" class="fa-spin" style="margin-left: 0.75rem" />
           </b-btn>
         </div>
       </b-card>
-      <b-card v-show="loggedIn" title="Logout" bg-variant="light">
+      <b-card v-show="loggedIn" title="Logout" bg-variant="light" style="max-width: fit-content; margin-bottom: 0.75rem;" block>
         <b-btn
-          v-show="loggedIn"
-          block
           class="login-button"
-          @click="$auth.logout()"
+          :disabled="loading"
+          variant="primary"
+          @click="loading=true && $auth.logout()"
         >
-          <font-awesome-icon :icon="['fas', 'sign-out-alt']" />
+          Get me out of here!
+          <font-awesome-icon v-if="!loading" :icon="['fas', 'sign-out-alt']" />
+          <font-awesome-icon v-if="loading" :icon="['fas', 'spinner']" class="fa-spin" />
         </b-btn>
       </b-card>
     </b-row>
@@ -43,18 +45,23 @@
 import { mapState } from 'vuex'
 
 export default {
-  components: {},
   middleware: ['auth'],
+  data () {
+    return {
+      loading: false
+    }
+  },
   computed: {
     ...mapState('auth', ['loggedIn']),
     strategies: () => [
-      { key: 'facebook', name: 'Facebook', color: '#3c65c4', active: true }
+      { key: 'facebook', name: 'Facebook', color: '#3c65c4', active: true, faIcon: 'facebook' }
     ]
   },
   beforeDestroy () {
     window.removeEventListener('keydown', this.backOnEscape)
   },
   mounted () {
+    this.loading = false
     window.addEventListener('keydown', this.backOnEscape)
   },
   methods: {
