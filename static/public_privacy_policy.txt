@@ -27,7 +27,7 @@ COME “sangiosleague.it” UTILIZZA LE INFORMAZIONI RACCOLTE?
  (ii) basta così.
 
 --------------------
-TRATTAMENTO DELLE INFORMAZIONI PERSONALI DA PARTE DEL PARTNER DELL'APPLICAZIONE.
+TRATTAMENTO DELLE INFORMAZIONI PERSONALI DA PARTE DEI PARTNERS DELL'APPLICAZIONE.
 
 “sangiosleague.it” non fornirà mai informazioni personali a nessuno. 
 
@@ -39,7 +39,7 @@ Le informazioni personali dei miei utenti sono parte integrante del mio business
 --------------------
 CONDIZIONI D'USO.
 
-Se decide di utilizzare o altrimenti accedere all'Applicazione, il tuo utilizzo/accesso e qualsiasi possibile controversia sulla privacy sono soggetti a questa Informativa sulla privacy e alle miei Condizioni d'uso, incluse le limitazioni sui danni, l'arbitrato delle controversie.
+Se decidi di utilizzare o altrimenti accedere all'Applicazione, il tuo utilizzo/accesso e qualsiasi possibile controversia sulla privacy sono soggetti a questa Informativa sulla privacy e alle miei Condizioni d'uso, incluse le limitazioni sui danni, l'arbitrato delle controversie.
 
 --------------------
 APPLICAZIONI/SITI WEB DI TERZE PARTI.
@@ -50,6 +50,13 @@ L'Applicazione non si collega ad altre applicazioni o siti web.
 A QUALI INFORMAZIONI PERSONALI POSSO ACCEDERE?
 
 “sangiosleague.it” non ti permette di accedere alle informazioni che ho raccolto dal tuo account facebook.
+
+--------------------
+COME POSSO CHIEDERE LA CANCELLAZIONE DEI MIEI DATI?
+
+Inviando un messaggio su Facebook con il testo "RICHIESTA DI CANCELLAZIONE DATI" dall'account con cui sei collegato a sangiosleague.it all'account di Christophe Thiebaud (https://www.facebook.com/christophe.thiebaud). 
+
+Cancellerò anche i dati di tutti gli utenti senza discriminazione, se Facebook me lo chiede gentilmente.
 
 --------------------
 I BAMBINI POSSONO USARE L'APPLICAZIONE?
