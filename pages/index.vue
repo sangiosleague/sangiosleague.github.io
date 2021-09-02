@@ -1,14 +1,5 @@
 <template>
   <div class="container">
-    <!-- div id="daysUntilKickOff" class="text-center m-2 fixed-top" style="color: white;">
-      <span v-if="!is2021">
-        &nbsp;
-      </span>
-      <span v-if="is2021">
-        <b>{{ daysUntilKickOff }} days </b> until kick-off
-      </span>
-    </!-->
-
     <header class="header my-left-fixed-top">
       <b-dropdown id="dropdown-dropright" dropright :text="year" variant="secondary" class="m-2">
         <b-dropdown-item href="#" @click="onSetYear('2020')">
@@ -39,6 +30,7 @@
         </li>
       </ul>
     </div>
+
     <span v-if="is2021">
       <div id="winners" style="text-align: center; margin-bottom: 1rem;">
         <nuxt-img
