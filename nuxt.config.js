@@ -192,7 +192,7 @@ export default {
       baseURL:
         process.env.NODE_ENV === 'production'
           ? 'https://sangiosleague.it/sangiosleague.api/v1'
-          : process.env.SGL_API_URL || 'http://localhost:4002/v1'
+          : process.env.SGL_API_URL || 'http://localhost:4002/dev'
     }
   }
 }
