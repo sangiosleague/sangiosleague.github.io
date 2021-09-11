@@ -23,11 +23,11 @@
             <img src="/resources/svgos/instagram.svg" title="instagram" class="my_icon">
           </a>
         </li>
-        <li>
+        <!-- li>
           <a href="https://www.facebook.com/events/534655621392000/" target="_facebook" class="text-white">
             <img src="/resources/svgos/facebook.svg" title="facebook" class="my_icon">
           </a>
-        </li>
+        </li -->
       </ul>
     </div>
 
