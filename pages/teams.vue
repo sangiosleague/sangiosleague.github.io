@@ -18,11 +18,12 @@
               @row-clicked="(item, index, event) => rowClickHandler(item, index, event)"
             >
               <template #cell(id)="data">
-                <nuxt-img
+                <img
                   class="thmb img-fluid"
-                  :src="`/resources/${year}/teams/${data.value}.jpg`"
+                  :src="`${$axios.defaults.baseURL}/${year}/image/${data.value}.jpg`"
                   alt="thumbnail image"
-                />
+                  :style="`${is2020?'border-radius: 50%;':''}`"
+                >
               </template>
             </b-table>
           </b-card>
@@ -38,11 +39,11 @@
               <font-awesome-icon :icon="['fas', 'arrow-left']" />
             </button>
           </div>
-          <nuxt-img
+          <img
             class="img-fluid"
-            :src="`/resources/${year}/teams/${selectedTeam}.png`"
+            :src="`${$axios.defaults.baseURL}/${year}/image/${selectedTeam}.${is2020?'png':'jpg'}`"
             alt="fuild image"
-          />
+          >
           <b-card no-body style="margin-bottom: 1rem;">
             <b-tabs card>
               <b-tab title="Matchs" active>
@@ -86,6 +87,9 @@ export default {
   computed: {
     hasTeams () {
       return this.teams.length > 0
+    },
+    is2020 () {
+      return this.year === '2020'
     },
     ...mapGetters({
       teams: 'getTeams',
@@ -138,7 +142,6 @@ export default {
 <style lang="scss">
 #teams img.thmb {
   max-width: 170px;
-  border-radius: 50%;
 }
 #teams td {
   text-align: left !important;
