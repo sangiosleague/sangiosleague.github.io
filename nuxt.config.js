@@ -2,20 +2,8 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static', // 'server',
 
-  publicRuntimeConfig: {
-    baseURL: process.env.BASE_URL || 'https://sangiosleague.it',
-    axios: {
-      baseURL: process.env.API_URL || 'https://sangiosleague.it/api/v1'
-    }
-  },
-
-  axios: {
-    proxyHeaders: false,
-    credentials: false
-  },
-
   server: {
-    port: process.env.PORT || 3001 // default: 3000
+    port: process.env.PORT || 4000 // default: 3000
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -24,7 +12,12 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto'
+      },
       { name: 'format-detection', content: 'telephone=no' }
     ]
   },
@@ -35,9 +28,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '~/assets/scss/style'
-  ],
+  css: ['~/assets/scss/style'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -78,9 +69,12 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    ['bootstrap-vue/nuxt', {
-      icons: false
-    }],
+    [
+      'bootstrap-vue/nuxt',
+      {
+        icons: false
+      }
+    ],
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
@@ -92,12 +86,14 @@ export default {
     // https://github.com/microcipcip/cookie-universal/tree/master/packages/cookie-universal-nuxt
     'cookie-universal-nuxt',
     // https://github.com/AlekseyPleshkov/nuxt-social-meta
-    ['nuxt-social-meta',
+    [
+      'nuxt-social-meta',
       {
         url: 'https://sangiosleague.it/',
         title: 'Sangios League',
         site_name: 'Sangios League Site',
-        description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+        description:
+          'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
         img: 'https://sangiosleague.it/logo.jpeg',
         img_size: { width: '1076px', height: '1010px' },
         locale: 'it_IT',
@@ -130,7 +126,8 @@ export default {
     manifest: {
       name: 'Sangios League',
       short_name: 'Sangios League',
-      description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+      description:
+        'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
       lang: 'it'
     },
     icon: {
@@ -139,7 +136,8 @@ export default {
     meta: {
       /* meta options */
       name: 'Sangios League',
-      description: 'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
+      description:
+        'Torneo di Calcio a 5 che si svolge a San Giovanni Lipioni (CH) durante il mese di agosto',
       author: 'Christophe Thiebaud',
       theme_color: '#000080',
       lang: 'it'
@@ -148,10 +146,7 @@ export default {
 
   fontawesome: {
     icons: {
-      brands: [
-        'faFacebook',
-        'faGithub'
-      ],
+      brands: ['faFacebook', 'faGithub'],
       solid: [
         'faArrowLeft',
         'faDotCircle',
@@ -190,5 +185,14 @@ export default {
     }
   },
 
-  serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }]
+  serverMiddleware: [{ path: '/api/count', handler: '~/api/count.js' }],
+
+  publicRuntimeConfig: {
+    axios: {
+      baseURL:
+        process.env.NODE_ENV === 'production'
+          ? 'https://sangiosleague.it/sangiosleague.api/api/dev'
+          : process.env.SGL_API_URL || 'http://localhost:4002/api/dev'
+    }
+  }
 }

@@ -67,6 +67,7 @@ export const mutations = {
 export const actions = {
   async getTeams ({ commit, state }) {
     const res = await this.$axios.get(state.year + '/teams.json', { progress: false })
+    console.log(res)
     const teams = res.data
     commit('setTeams', teams)
     return teams
