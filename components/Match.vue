@@ -41,16 +41,7 @@ export default {
     },
     fixture: {
       type: Object,
-      default: () => {
-        return {
-          when: '2020-08-08T22:00:00+02:00',
-          group: 'A',
-          teams: [
-            { id: 'TDEU', goals: 7 },
-            { id: 'Wagliun20', goals: 1 }
-          ]
-        }
-      },
+      default: () => { return {} },
       required: true
     },
     teamMap: {

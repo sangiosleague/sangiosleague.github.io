@@ -32,7 +32,20 @@
     </div>
 
     <span v-if="is2021">
+
       <div id="winners" style="text-align: center; margin-bottom: 1rem;">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/winners.jpg`">
+      </div>
+      <div id="topScorer" style="text-align: center; margin-bottom: 1rem;">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/topScorer.jpg`">
+      </div>
+      <div id="bestGoalkeeper" style="text-align: center; margin-bottom: 1rem;">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/bestGoalkeeper.jpg`">
+      </div>
+      <div id="runnersUp" style="text-align: center; margin-bottom: 1rem;">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/runnersUp.jpg`">
+      </div>
+      <div id="announcement" style="text-align: center; margin-bottom: 1rem;">
         <nuxt-img
           class="img-fluid"
           :src="announcement"
