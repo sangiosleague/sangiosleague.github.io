@@ -191,8 +191,8 @@ export default {
     axios: {
       baseURL:
         process.env.NODE_ENV === 'production'
-          ? 'https://sangiosleague.it/sangiosleague.api/api/dev'
-          : process.env.SGL_API_URL || 'http://localhost:4002/api/dev'
+          ? 'https://api.sangiosleague.api/v1'
+          : process.env.SGL_API_URL || 'http://localhost:4002/v1'
     }
   }
 }

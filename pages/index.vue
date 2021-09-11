@@ -32,19 +32,19 @@
     </div>
 
     <div id="winners" style="text-align: center; margin-bottom: 1rem;">
-      <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/winners.jpg`">
+      <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/images/winners.jpg`">
     </div>
     <div v-if="is2021">
       <div id="topScorer" style="text-align: center; margin-bottom: 1rem;">
-        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/topScorer.jpg`">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/images/topScorer.jpg`">
       </div>
       <div id="bestGoalkeeper" style="text-align: center; margin-bottom: 1rem;">
-        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/bestGoalkeeper.jpg`">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/images/bestGoalkeeper.jpg`">
       </div>
     </div>
     <div>
       <div id="runnersUp" style="text-align: center; margin-bottom: 1rem;">
-        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/image/runnersUp.jpg`">
+        <img class="img-fluid" :src="`${$axios.defaults.baseURL}/${year}/images/runnersUp.jpg`">
       </div>
     </div>
     <div v-if="is2021">

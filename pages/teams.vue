@@ -20,7 +20,7 @@
               <template #cell(id)="data">
                 <img
                   class="thmb img-fluid"
-                  :src="`${$axios.defaults.baseURL}/${year}/image/${data.value}.jpg`"
+                  :src="`${$axios.defaults.baseURL}/${year}/images/${data.value}.jpg`"
                   alt="thumbnail image"
                   :style="`${is2020?'border-radius: 50%;':''}`"
                 >
@@ -41,7 +41,7 @@
           </div>
           <img
             class="img-fluid"
-            :src="`${$axios.defaults.baseURL}/${year}/image/${selectedTeam}.${is2020?'png':'jpg'}`"
+            :src="`${$axios.defaults.baseURL}/${year}/images/${selectedTeam}.${is2020?'png':'jpg'}`"
             alt="fuild image"
           >
           <b-card no-body style="margin-bottom: 1rem;">
