@@ -59,10 +59,15 @@
                 <b-table
                   striped
                   hover
+                  :fields="fields2"
                   :items="teamMap[selectedTeam].players"
                   responsive="sm"
                   thead-class="d-none"
-                />
+                >
+                  <template #cell(number)="data">
+                    {{ data.value==-1 ? "All." : data.value }}
+                  </template>
+                </b-table>
               </b-tab>
             </b-tabs>
           </b-card>
@@ -81,6 +86,9 @@ export default {
       fields: [
         'name',
         { key: 'id', label: '' }
+      ],
+      fields2: [
+        'number', 'firstName', 'lastName'
       ]
     }
   },
