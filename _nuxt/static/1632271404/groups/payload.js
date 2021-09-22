@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/groups", {data:[{_img:{}}],fetch:{},mutations:[]});

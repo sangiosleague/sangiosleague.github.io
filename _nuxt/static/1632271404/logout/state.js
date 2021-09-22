@@ -1,0 +1,1 @@
+window.__NUXT__=(function(a){return {staticAssetsBase:"\u002F_nuxt\u002Fstatic\u002F1632271404",layout:"default",error:a,state:a,serverRendered:false,routePath:"\u002Flogout",config:{axios:{baseURL:"https:\u002F\u002Fsangiosleague.it\u002Fsangiosleague.api\u002Fv1"},_app:{basePath:"\u002F",assetsPath:"\u002F_nuxt\u002F",cdnURL:a},content:{dbHash:"7c815983"}}}}(null));

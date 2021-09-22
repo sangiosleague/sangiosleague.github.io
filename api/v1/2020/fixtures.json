@@ -1,0 +1,218 @@
+[
+  {
+    "group": "A",
+    "when": "2020-08-08T18:30:00+02:00",
+    "teams": [
+      { "id": "LuBarrottDogliola", "goals": 5 },
+      { "id": "Nonivoglij", "goals": 5 }
+    ],
+    "youtube": "https://youtu.be/lSENxbKfF9A"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-08T21:00:00+02:00",
+    "teams": [
+      { "id": "Quota100", "goals": 0 },
+      { "id": "LARITeam", "goals": 8 }
+    ],
+    "youtube": "https://youtu.be/rwxcrcknm1o"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-08T22:00:00+02:00",
+    "teams": [
+      { "id": "TDEU", "goals": 7 },
+      { "id": "Wagliun20", "goals": 1 }
+    ],
+    "youtube": "https://youtu.be/INrvBDAq7UM"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-09T18:30:00+02:00",
+    "teams": [
+      { "id": "SergentTeam", "goals": 5 },
+      { "id": "SRAT", "goals": 2 }
+    ],
+    "youtube": "https://youtu.be/_eJ1RcyRgnY"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-09T19:30:00+02:00",
+    "teams": [
+      { "id": "GliAmiciDiClaudio", "goals": 2 },
+      { "id": "LARITeam", "goals": 6 }
+    ],
+    "youtube": "https://youtu.be/mfnYYefDMGE"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-09T20:30:00+02:00",
+    "teams": [
+      { "id": "SRAT", "goals": 4 },
+      { "id": "GliAmiciDiClaudio", "goals": 3 }
+    ],
+    "youtube": "https://youtu.be/avQ5jir8Rxw"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-09T22:00:00+02:00",
+    "teams": [
+      { "id": "Nonivoglij", "goals": 3 },
+      { "id": "TDEU", "goals": 1 }
+    ],
+    "youtube": "https://youtu.be/cb1SAmh9LYE"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-10T18:00:00+02:00",
+    "teams": [
+      { "id": "SergentTeam", "goals": 11 },
+      { "id": "Quota100", "goals": 0 }
+    ],
+    "youtube": "https://youtu.be/2EnuNHFu1y4"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-10T19:00:00+02:00",
+    "teams": [
+      { "id": "TDEU", "goals": 6 },
+      { "id": "LuBarrottDogliola", "goals": 9 }
+    ],
+    "youtube": "https://youtu.be/F_LkkU4Yxlo"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-10T20:30:00+02:00",
+    "teams": [
+      { "id": "DivanoKiev", "goals": 4 },
+      { "id": "Nonivoglij", "goals": 3 }
+    ],
+    "youtube": "https://youtu.be/L13NdfXamo8"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-10T21:30:00+02:00",
+    "teams": [
+      { "id": "Wagliun20", "goals": 2 },
+      { "id": "DivanoKiev", "goals": 8 }
+    ],
+    "youtube": "https://youtu.be/LLDj9DKLte0"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-10T22:30:00+02:00",
+    "teams": [
+      { "id": "LARITeam", "goals": 4 },
+      { "id": "SRAT", "goals": 3 }
+    ],
+    "youtube": "https://youtu.be/vG77hNhj_is"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-12T18:00:00+02:00",
+    "teams": [
+      { "id": "SergentTeam", "goals": 1 },
+      { "id": "LARITeam", "goals": 4 }
+    ],
+    "youtube": "https://youtu.be/ZwFS3zCFH9w"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-12T19:00:00+02:00",
+    "teams": [
+      { "id": "TDEU", "goals": 3 },
+      { "id": "DivanoKiev", "goals": 1 }
+    ],
+    "youtube": "https://youtu.be/7GOrwjbTmC4"
+  },
+  {
+    "group": "B",
+    "when": "2020-08-12T21:00:00+02:00",
+    "teams": [
+      { "id": "Quota100", "goals": 3 },
+      { "id": "GliAmiciDiClaudio", "goals": 3 }
+    ],
+    "youtube": "https://youtu.be/xI37lDJgwko"
+  },
+  {
+    "group": "A",
+    "when": "2020-08-12T22:00:00+02:00",
+    "teams": [
+      { "id": "Wagliun20", "goals": 3 },
+      { "id": "LuBarrottDogliola", "goals": 10 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "B",
+    "when": "2020-08-13T18:00:00+02:00",
+    "teams": [
+      { "id": "Quota100", "goals": 3 },
+      { "id": "SRAT", "goals": 5 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "A",
+    "when": "2020-08-13T19:00:00+02:00",
+    "teams": [
+      { "id": "LuBarrottDogliola", "goals": 3 },
+      { "id": "DivanoKiev", "goals": 8 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "A",
+    "when": "2020-08-13T21:00:00+02:00",
+    "teams": [
+      { "id": "Nonivoglij", "goals": 14 },
+      { "id": "Wagliun20", "goals": 5 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "B",
+    "when": "2020-08-13T22:00:00+02:00",
+    "teams": [
+      { "id": "SergentTeam", "goals": 11 },
+      { "id": "GliAmiciDiClaudio", "goals": 4 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "semi final",
+    "when": "2020-08-16T21:00:00+02:00",
+    "teams": [
+      { "id": "LARITeam", "goals": 4 },
+      { "id": "Nonivoglij", "goals": 3 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "semi final",
+    "when": "2020-08-16T22:00:00+02:00",
+    "teams": [
+      { "id": "DivanoKiev", "goals": 2, "penalties": 1 },
+      { "id": "SergentTeam", "goals": 2, "penalties": 3 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "final 3rd place",
+    "when": "2020-08-18T21:00:00+02:00",
+    "teams": [
+      { "id": "DivanoKiev", "goals": 6 },
+      { "id": "Nonivoglij", "goals": 8 }
+    ],
+    "youtube": null
+  },
+  {
+    "group": "final",
+    "when": "2020-08-18T22:00:00+02:00",
+    "teams": [
+      { "id": "LARITeam", "goals": 7 },
+      { "id": "SergentTeam", "goals": 2 }
+    ],
+    "youtube": null
+  }
+]
